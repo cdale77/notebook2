@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "history": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.1.0",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -15,7 +20,11 @@
     "prettify": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
+    "fetch-mock": "^6.0.0",
     "prettier": "^1.10.2",
-    "prettier-check": "^2.0.0"
+    "prettier-check": "^2.0.0",
+    "prop-types": "^15.6.0",
+    "react-test-renderer": "^16.2.0",
+    "redux-mock-store": "^1.4.0"
   }
 }

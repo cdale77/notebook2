@@ -1,7 +1,4 @@
-import Store from "./Store";
-
 const Utils = {
-
   debounce: (func, wait = 500, immediate) => {
     let timeout;
     return function() {
