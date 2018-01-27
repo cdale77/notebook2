@@ -1,11 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
 import Store from "./Store";
+import ApplicationContainer from "./containers/ApplicationContainer";
 
 const App = () => {
   return (
     <Provider store={Store}>
-      <h2>App</h2>
+      <ApplicationContainer />
     </Provider>
   );
 };

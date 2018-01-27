@@ -2,7 +2,7 @@ import React from "react";
 import TestUtils from "react-dom/test-utils";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import AppContainer from "../../containers/AppContainer";
+import ApplicationContainer from "../../containers/ApplicationContainer";
 import Constants from "../../Constants";
 import thunk from "redux-thunk";
 
@@ -16,7 +16,7 @@ describe("AppContainer", () => {
     it("should render the authentication form", () => {
       const component = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <AppContainer />
+          <ApplicationContainer />
         </Provider>
       );
     });
@@ -28,7 +28,7 @@ describe("AppContainer", () => {
     it("should render the application", () => {
       const component = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <AppContainer />
+          <ApplicationContainer />
         </Provider>
       );
     });
