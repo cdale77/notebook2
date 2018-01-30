@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-//import SignInForm from "./../components/forms/SignInForm";
+import SignInForm from "./../components/forms/SignInForm";
 //import SessionThunks from "./../thunks/SessionThunks";
 
 const mapStateToProps = state => {
@@ -21,6 +21,7 @@ class SignInContainer extends React.Component {
     return (
       <div className="sign-in-container">
         <h2>Sign In</h2>
+        <SignInForm onSubmit={this.props.signIn} />
       </div>
     );
   }

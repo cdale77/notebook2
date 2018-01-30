@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import FlashActions from "./../actions/FlashActions";
 import SessionActions from "./../actions/SessionActions";
-//import SignInContainer from "./SignInContainer";
+import SignInContainer from "./SignInContainer";
 //import AuthenticatedContainer from "./AuthenticatedContainer";
 //import Flash from "./../components/Flash";
 
@@ -26,7 +26,7 @@ class AppContainer extends React.Component {
     if (this.props.session.signedIn === true) {
       return "AuthenticatedContainer";
     } else {
-      return "SignIncontainer";
+      return <SignInContainer />;
     }
   }
 

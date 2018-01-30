@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitButton rendering should be disabled if errors are present 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    className="button"
+    disabled={true}
+    id="submit"
+    name="submit"
+    onClick={[Function]}
+    type="submit"
+    value="Submit"
+  />
+</div>
+`;
+
+exports[`SubmitButton rendering should be enabled if errors are not present 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    className="button"
+    disabled={false}
+    id="submit"
+    name="submit"
+    onClick={[Function]}
+    type="submit"
+    value="Submit"
+  />
+</div>
+`;
+
+exports[`SubmitButton rendering should have a default value 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    className="button"
+    disabled={false}
+    id="submit"
+    name="submit"
+    onClick={[Function]}
+    type="submit"
+    value="Submit"
+  />
+</div>
+`;
+
+exports[`SubmitButton rendering should render a button 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    className="button"
+    disabled={false}
+    id="submit"
+    name="submit"
+    onClick={[Function]}
+    type="submit"
+    value="Login"
+  />
+</div>
+`;
