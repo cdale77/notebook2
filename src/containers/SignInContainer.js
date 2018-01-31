@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SignInForm from "./../components/forms/SignInForm";
-//import SessionThunks from "./../thunks/SessionThunks";
+import SessionThunks from "./../thunks/SessionThunks";
 
 const mapStateToProps = state => {
   return {};
@@ -10,8 +10,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     signIn: form => {
-      console.log("sign in");
-      //     dispatch(SessionThunks.signIn(form.email, form.password));
+      dispatch(SessionThunks.signIn(form.email, form.password));
     }
   };
 };

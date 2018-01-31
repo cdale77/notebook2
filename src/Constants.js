@@ -1,8 +1,7 @@
 const Constants = {
   DEFAULT_STATE: {
     session: {
-      signedIn: false,
-      accessToken: ""
+      signedIn: false
     },
     flash: {
       flashType: "",

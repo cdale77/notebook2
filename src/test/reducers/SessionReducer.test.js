@@ -9,14 +9,12 @@ describe("SessionReducer", () => {
   });
 
   it("should handle NEW_SESSION_SUCCESS", () => {
-    const accessToken = "12234";
     const returnedState = SessionReducer(
       undefined,
-      SessionActions.newSessionSuccess(accessToken)
+      SessionActions.newSessionSuccess()
     );
     expect(returnedState).toEqual({
-      signedIn: true,
-      accessToken: accessToken
+      signedIn: true
     });
   });
 
@@ -27,8 +25,7 @@ describe("SessionReducer", () => {
       SessionActions.newSessionFailure(msg)
     );
     expect(returnedState).toEqual({
-      signedIn: false,
-      token: ""
+      signedIn: false
     });
   });
 
@@ -38,8 +35,7 @@ describe("SessionReducer", () => {
       SessionActions.destroySession()
     );
     expect(returnedState).toEqual({
-      signedIn: false,
-      token: ""
+      signedIn: false
     });
   });
 });

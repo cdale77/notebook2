@@ -1,10 +1,9 @@
 import Constants from "../Constants";
 
 const SessionActions = {
-  newSessionSuccess: data => {
+  newSessionSuccess: () => {
     return {
-      type: Constants.ACTIONS.NEW_SESSION_SUCCESS,
-      accessToken: data
+      type: Constants.ACTIONS.NEW_SESSION_SUCCESS
     };
   },
   newSessionFailure: message => {
