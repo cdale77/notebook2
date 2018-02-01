@@ -19,8 +19,10 @@ class SignInContainer extends React.Component {
   render() {
     return (
       <div className="sign-in-container">
-        <h2>Sign In</h2>
-        <SignInForm onSubmit={this.props.signIn} />
+        <div className="sign-in-form">
+          <h2>Sign In</h2>
+          <SignInForm onSubmit={this.props.signIn} />
+        </div>
       </div>
     );
   }
