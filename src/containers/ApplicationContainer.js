@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import FlashActions from "./../actions/FlashActions";
 import SessionActions from "./../actions/SessionActions";
 import SignInContainer from "./SignInContainer";
-//import AuthenticatedContainer from "./AuthenticatedContainer";
-//import Flash from "./../components/Flash";
+import AuthenticatedContainer from "./AuthenticatedContainer";
 
 const mapStateToProps = state => {
   return { session: state.session };
@@ -24,7 +23,7 @@ const mapDispatchToProps = dispatch => {
 class AppContainer extends React.Component {
   renderContainer() {
     if (this.props.session.signedIn === true) {
-      return "AuthenticatedContainer";
+      return <AuthenticatedContainer />;
     } else {
       return <SignInContainer />;
     }
