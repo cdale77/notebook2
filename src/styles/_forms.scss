@@ -3,9 +3,59 @@ label,input {
 }
 
 label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+select,
+textarea,
+input[type="tel"],
+input[type="date"],
+input[type="text"],
+input[type="password"] {
+  border: 1px solid $medium-gray;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: $form-box-shadow;
+  padding: 0.5rem;
+
+  &:hover {
+    border-color: shade($medium-gray, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: 3px;
+    }
+  }
+}
+
+.button {
+  color: white;
+  font-size: 1.2em;
+  background-color: $action-color;
+  padding: 0.3em 0.6em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background-color: $dark-action-color;
+  }
+
+  &:focus {
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
 }

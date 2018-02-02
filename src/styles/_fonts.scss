@@ -1,7 +1,10 @@
 body {
-  font-family: sans-serif;
+  font-color: $dark-gray;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
 }
 
-h2 {
-  letter-spacing: 0.5rem;
+h1,h2,h3,h4 {
+  line-height: 1.2rem;
+  letter-spacing: 0.1rem;
 }
