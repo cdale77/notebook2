@@ -85,6 +85,9 @@ input[type="password"] {
   background-color: #6d79d3;
   color: white; }
 
+.signout-link {
+  cursor: pointer; }
+
 body {
   background-color: #d5d5d5;
   margin: 0; }

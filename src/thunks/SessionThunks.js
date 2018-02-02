@@ -19,6 +19,21 @@ const SessionThunks = {
 
       dispatch(RequestActions.requestEnd("NEW_SESSION"));
     };
+  },
+  signOut: () => {
+    return dispatch => {
+      dispatch(RequestActions.requestStart("DESTROY_SESSION"));
+      Firebase.auth()
+        .signOut()
+        .then(_ => {
+          dispatch(SessionActions.destroySession());
+        })
+        .catch(error => {
+          dispatch(FlashActions.flashError(error.message));
+        });
+
+      dispatch(RequestActions.requestEnd("DESTROY_SESSION"));
+    }
   }
 };
 
