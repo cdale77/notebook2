@@ -78,5 +78,13 @@ input[type="password"] {
   display: flex;
   justify-content: center; }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #6d79d3;
+  color: white; }
+
 body {
-  background-color: #d5d5d5; }
+  background-color: #d5d5d5;
+  margin: 0; }

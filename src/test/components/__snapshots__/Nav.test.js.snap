@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav rendering logged in should render the component with the UserMenu 1`] = `
+<nav
+  className="nav"
+>
+  <div
+    className="logo"
+  >
+    NoteBook2
+  </div>
+  <div
+    className="user-menu"
+  >
+    <span
+      className="signout-link"
+      onClick={[Function]}
+    >
+      Log Out
+    </span>
+  </div>
+</nav>
+`;
+
+exports[`Nav rendering logged out should render the component without the UserMenu 1`] = `
+<nav
+  className="nav"
+>
+  <div
+    className="logo"
+  >
+    NoteBook2
+  </div>
+</nav>
+`;

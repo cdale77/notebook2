@@ -2,7 +2,9 @@
 @import "_fonts";
 @import "_forms";
 @import "_sign_in_container";
+@import "_nav";
 
 body {
   background-color: $background-color;
+  margin: 0;
 }
