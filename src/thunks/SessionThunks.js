@@ -10,7 +10,8 @@ const SessionThunks = {
       Firebase.auth()
         .signInWithEmailAndPassword(email, password)
         .then(_ => {
-          dispatch(SessionActions.newSessionSuccess());
+          const user = Firebase.auth().currentUser;
+          dispatch(SessionActions.newSessionSuccess(user.uid));
         })
         .catch(error => {
           dispatch(FlashActions.flashError(error.message));
@@ -33,7 +34,7 @@ const SessionThunks = {
         });
 
       dispatch(RequestActions.requestEnd("DESTROY_SESSION"));
-    }
+    };
   }
 };
 

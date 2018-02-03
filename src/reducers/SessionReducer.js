@@ -4,17 +4,20 @@ function sessionReducer(state = {}, action) {
   switch (action.type) {
     case Constants.ACTIONS.NEW_SESSION_SUCCESS:
       return Object.assign({}, state, {
-        signedIn: true
+        signedIn: true,
+        uid: action.uid
       });
 
     case Constants.ACTIONS.NEW_SESSION_FAILURE:
       return Object.assign({}, state, {
-        signedIn: false
+        signedIn: false,
+        uid: ""
       });
 
     case Constants.ACTIONS.DESTROY_SESSION:
       return Object.assign({}, state, {
-        signedIn: false
+        signedIn: false,
+        uid: ""
       });
 
     default:

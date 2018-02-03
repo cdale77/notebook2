@@ -4,7 +4,8 @@ describe("Constants", () => {
     it("should return the correct default state", () => {
       const expected = {
         session: {
-          signedIn: false
+          signedIn: false,
+          uuid: ""
         },
         flash: {
           flashType: "",

@@ -11,10 +11,11 @@ describe("SessionReducer", () => {
   it("should handle NEW_SESSION_SUCCESS", () => {
     const returnedState = SessionReducer(
       undefined,
-      SessionActions.newSessionSuccess()
+      SessionActions.newSessionSuccess("1234")
     );
     expect(returnedState).toEqual({
-      signedIn: true
+      signedIn: true,
+      uid: "1234"
     });
   });
 
@@ -25,7 +26,8 @@ describe("SessionReducer", () => {
       SessionActions.newSessionFailure(msg)
     );
     expect(returnedState).toEqual({
-      signedIn: false
+      signedIn: false,
+      uid: ""
     });
   });
 
@@ -35,7 +37,8 @@ describe("SessionReducer", () => {
       SessionActions.destroySession()
     );
     expect(returnedState).toEqual({
-      signedIn: false
+      signedIn: false,
+      uid: ""
     });
   });
 });

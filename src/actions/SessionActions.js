@@ -1,9 +1,10 @@
 import Constants from "../Constants";
 
 const SessionActions = {
-  newSessionSuccess: () => {
+  newSessionSuccess: uid => {
     return {
-      type: Constants.ACTIONS.NEW_SESSION_SUCCESS
+      type: Constants.ACTIONS.NEW_SESSION_SUCCESS,
+      uid: uid
     };
   },
   newSessionFailure: message => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Nav from "../components/Nav";
-import SessionThunks from "../thunks/SessionThunks"
+import SessionThunks from "../thunks/SessionThunks";
 
 const mapStateToProps = state => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     signOut: () => {
-      dispatch(SessionThunks.signOut())
+      dispatch(SessionThunks.signOut());
     }
   };
 };

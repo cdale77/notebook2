@@ -2,9 +2,10 @@ import SessionActions from "../../actions/SessionActions";
 
 describe("SessionActions", () => {
   it("should return the proper NEW_SESSION_SUCCESS action", () => {
-    const result = SessionActions.newSessionSuccess();
+    const result = SessionActions.newSessionSuccess("1234");
     expect(result).toEqual({
-      type: "NEW_SESSION_SUCCESS"
+      type: "NEW_SESSION_SUCCESS",
+      uid: "1234"
     });
   });
 
