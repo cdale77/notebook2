@@ -1,3 +1,6 @@
+import Store from "./Store";
+import Firebase from "./Firebase";
+
 const Utils = {
   debounce: (func, wait = 500, immediate) => {
     let timeout;
@@ -13,6 +16,23 @@ const Utils = {
       timeout = setTimeout(later, wait);
       if (callNow) func.apply(context, args);
     };
+  },
+  getUid: () => {
+    const currentState = Store.getState();
+    const session = currentState["session"] || {};
+    session["uid"] || "";
+  },
+  getFirebaseUserRef: () => {
+    const uid = this.getUid;
+    Firebase.ref(uid);
+  },
+  getFireBaseBooksRef: () => {
+    const uid = this.getUid();
+    Firebase.ref(uid + "/books");
+  },
+  getFireBaseBookRef: bookId => {
+    const uid = this.getUid();
+    Firebase.ref(uid + "/books/" + bookId);
   }
 };
 

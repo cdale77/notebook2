@@ -7,6 +7,10 @@ const Constants = {
     flash: {
       flashType: "",
       message: ""
+    },
+    books: {
+      bookList: [],
+      currentBook: {}
     }
   },
   ACTIONS: {
@@ -17,7 +21,12 @@ const Constants = {
     FLASH_CLEAR: "FLASH_CLEAR",
     NEW_SESSION_SUCCESS: "NEW_SESSION_SUCCESS",
     NEW_SESSION_FAILURE: "NEW_SESSION_FAILURE",
-    DESTROY_SESSION: "DESTROY_SESSION"
+    DESTROY_SESSION: "DESTROY_SESSION",
+    GET_BOOKS_SUCCESS: "GET_BOOKS_SUCCESS",
+    GET_BOOKS_FAILURE: "GET_BOOKS_FAILURE",
+    CREATE_BOOK_SUCCESS: "CREATE_BOOK_SUCCESS",
+    CREATE_BOOK_FAILURE: "CREATE_BOOK_FAILURE",
+    DESTROY_BOOK: "DESTROY_BOOK"
   }
 };
 

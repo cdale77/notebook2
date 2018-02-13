@@ -10,6 +10,10 @@ describe("Constants", () => {
         flash: {
           flashType: "",
           message: ""
+        },
+        books: {
+          bookList: [],
+          currentBook: {}
         }
       };
 
