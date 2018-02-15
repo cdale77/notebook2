@@ -88,6 +88,9 @@ input[type="password"] {
 .signout-link {
   cursor: pointer; }
 
+.book-list {
+  padding: 0.75rem; }
+
 body {
   background-color: #d5d5d5;
   margin: 0; }
