@@ -32,7 +32,7 @@ class AuthenticatedContainer extends React.Component {
   elementToDisplay() {
     const currentBook = this.getCurrentBook();
     const bookList = this.getBookList();
-    if (currentBook !== {}) {
+    if (currentBook["bookId"]) {
       return <BookView book={currentBook} />;
     } else {
       return <BookList bookList={bookList} />;
