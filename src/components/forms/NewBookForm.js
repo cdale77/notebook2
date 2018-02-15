@@ -23,8 +23,8 @@ class NewBookForm extends React.Component {
       <div className="form fieldset new-book-form">
         <form>
           <TextInput
-            title="name"
             name="name"
+            title="Name"
             value={this.state.name}
             onChange={this.handleNameChange.bind(this)}
           />

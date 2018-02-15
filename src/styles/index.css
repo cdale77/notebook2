@@ -91,6 +91,13 @@ input[type="password"] {
 .book-list {
   padding: 0.75rem; }
 
+.new-book-form form {
+  display: flex;
+  align-items: center; }
+
+.new-book-form .form-group {
+  margin-right: 0.75rem; }
+
 body {
   background-color: #d5d5d5;
   margin: 0; }

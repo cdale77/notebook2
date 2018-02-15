@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 const TextInput = ({ title, name, fieldType, value, onChange }) => {
   return (
     <div className="form-group">
-      <label htmlFor={name}>{title}</label>
       <input
         name={name}
         id={name}
         className={"input-" + name}
         type={fieldType || "text"}
         value={value}
+        placeholder={title}
         onChange={onChange}
       />
     </div>
