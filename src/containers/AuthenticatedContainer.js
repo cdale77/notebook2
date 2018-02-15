@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Nav from "../components/Nav";
 import SessionThunks from "../thunks/SessionThunks";
+import BookThunks from "../thunks/BookThunks";
 import BookList from "../components/BookList";
 import BookView from "../components/BookView";
 
@@ -17,8 +18,8 @@ const mapDispatchToProps = dispatch => {
     signOut: () => {
       dispatch(SessionThunks.signOut());
     },
-    createBook: bookName => {
-      console.log("creating new book: ", bookName);
+    createBook: name => {
+      dispatch(BookThunks.createBook(name));
     }
   };
 };

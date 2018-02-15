@@ -23,16 +23,16 @@ const Utils = {
     return session["uid"] || "";
   },
   getFirebaseUserRef: () => {
-    const uid = this.getUid;
-    return Firebase.ref(uid);
+    const uid = Utils.getUid;
+    return Firebase.database().ref(uid);
   },
   getFireBaseBooksRef: () => {
-    const uid = this.getUid();
-    return Firebase.ref(uid + "/books");
+    const uid = Utils.getUid();
+    return Firebase.database().ref(uid + "/books");
   },
   getFireBaseBookRef: bookId => {
-    const uid = this.getUid();
-    return Firebase.ref(uid + "/books/" + bookId);
+    const uid = Utils.getUid();
+    return Firebase.database().ref(uid + "/books/" + bookId);
   }
 };
 
