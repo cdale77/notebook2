@@ -17,16 +17,12 @@ exports[`SignInContainer rendering should render without error 1`] = `
         <div
           className="form-group"
         >
-          <label
-            htmlFor="email"
-          >
-            email
-          </label>
           <input
             className="input-email"
             id="email"
             name="email"
             onChange={[Function]}
+            placeholder="email"
             type="text"
             value=""
           />
@@ -34,16 +30,12 @@ exports[`SignInContainer rendering should render without error 1`] = `
         <div
           className="form-group"
         >
-          <label
-            htmlFor="password"
-          >
-            password
-          </label>
           <input
             className="input-password"
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder="password"
             type="password"
             value=""
           />

@@ -4,16 +4,12 @@ exports[`TextInput rendering should render an input 1`] = `
 <div
   className="form-group"
 >
-  <label
-    htmlFor="name"
-  >
-    title
-  </label>
   <input
     className="input-name"
     id="name"
     name="name"
     onChange={[Function]}
+    placeholder="title"
     type="text"
     value="foo"
   />
@@ -24,16 +20,12 @@ exports[`TextInput rendering should render an input with a default value 1`] = `
 <div
   className="form-group"
 >
-  <label
-    htmlFor="name"
-  >
-    title
-  </label>
   <input
     className="input-name"
     id="name"
     name="name"
     onChange={[Function]}
+    placeholder="title"
     type="text"
     value={undefined}
   />
@@ -44,16 +36,12 @@ exports[`TextInput rendering should render an password input 1`] = `
 <div
   className="form-group"
 >
-  <label
-    htmlFor="name"
-  >
-    title
-  </label>
   <input
     className="input-name"
     id="name"
     name="name"
     onChange={[Function]}
+    placeholder="title"
     type="password"
     value="foo"
   />

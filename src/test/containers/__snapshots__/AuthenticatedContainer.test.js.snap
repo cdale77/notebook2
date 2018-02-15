@@ -26,16 +26,12 @@ exports[`AuthenticatedContainer rendering should render without error 1`] = `
         <div
           className="form-group"
         >
-          <label
-            htmlFor="name"
-          >
-            name
-          </label>
           <input
             className="input-name"
             id="name"
             name="name"
             onChange={[Function]}
+            placeholder="Name"
             type="text"
             value=""
           />
@@ -85,16 +81,12 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
         <div
           className="form-group"
         >
-          <label
-            htmlFor="name"
-          >
-            name
-          </label>
           <input
             className="input-name"
             id="name"
             name="name"
             onChange={[Function]}
+            placeholder="Name"
             type="text"
             value=""
           />
@@ -144,16 +136,12 @@ exports[`AuthenticatedContainer without a currrentBook set should render the Boo
         <div
           className="form-group"
         >
-          <label
-            htmlFor="name"
-          >
-            name
-          </label>
           <input
             className="input-name"
             id="name"
             name="name"
             onChange={[Function]}
+            placeholder="Name"
             type="text"
             value=""
           />
