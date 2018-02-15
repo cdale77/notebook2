@@ -22,19 +22,17 @@ const mapDispatchToProps = dispatch => {
 
 class AuthenticatedContainer extends React.Component {
   getCurrentBook() {
-    //return(this.props.books["currenBook"] || {});
-    return {};
+    return this.props.books["currenBook"] || {};
   }
 
   getBookList() {
-    //return(this.props.books["bookList"] || []);
-    return [];
+    return this.props.books["bookList"] || [];
   }
 
   elementToDisplay() {
     const currentBook = this.getCurrentBook();
     const bookList = this.getBookList();
-    if (currentBook != {}) {
+    if (currentBook !== {}) {
       return <BookView book={currentBook} />;
     } else {
       return <BookList bookList={bookList} />;

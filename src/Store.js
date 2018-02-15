@@ -5,6 +5,7 @@ import { createLogger } from "redux-logger";
 import Utils from "./Utils";
 import SessionReducer from "./reducers/SessionReducer";
 import FlashReducer from "./reducers/FlashReducer";
+import BookReducer from "./reducers/BookReducer";
 
 // Set up the initial state. If there is something in localstorage, grab it. If
 // not, then use the specified default state.
@@ -15,7 +16,8 @@ const initialState = persistedState == null ? defaultState : persistedState;
 // redux setup
 const appReducer = combineReducers({
   session: SessionReducer,
-  flash: FlashReducer
+  flash: FlashReducer,
+  books: BookReducer
 });
 
 // clear state on log out

@@ -1,6 +1,6 @@
 import Constants from "../Constants";
 
-function bookReducer(state = {}, action) {
+function BookReducer(state = {}, action) {
   switch (action.type) {
     case Constants.ACTIONS.CREATE_BOOK_SUCCESS:
       let newList = state.bookList.slice();
@@ -12,7 +12,7 @@ function bookReducer(state = {}, action) {
 
     case Constants.ACTIONS.DESTROY_BOOK:
       let filteredList = state.bookList.filter(book => {
-        return book.bookId != action.bookId;
+        return book.bookId !== action.bookId;
       });
 
       return Object.assign({}, state, {
@@ -24,4 +24,4 @@ function bookReducer(state = {}, action) {
   }
 }
 
-export default bookReducer;
+export default BookReducer;
