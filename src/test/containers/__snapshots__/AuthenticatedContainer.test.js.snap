@@ -15,3 +15,35 @@ exports[`AuthenticatedContainer rendering should render without error 1`] = `
   </nav>
 </div>
 `;
+
+exports[`AuthenticatedContainer with a currrentBook set should render the BookView 1`] = `
+<div
+  className="authenticated-container"
+>
+  <nav
+    className="nav"
+  >
+    <div
+      className="logo"
+    >
+      NoteBook2
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`AuthenticatedContainer without a currrentBook set should render the BookList 1`] = `
+<div
+  className="authenticated-container"
+>
+  <nav
+    className="nav"
+  >
+    <div
+      className="logo"
+    >
+      NoteBook2
+    </div>
+  </nav>
+</div>
+`;

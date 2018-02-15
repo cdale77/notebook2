@@ -20,19 +20,19 @@ const Utils = {
   getUid: () => {
     const currentState = Store.getState();
     const session = currentState["session"] || {};
-    session["uid"] || "";
+    return session["uid"] || "";
   },
   getFirebaseUserRef: () => {
     const uid = this.getUid;
-    Firebase.ref(uid);
+    return Firebase.ref(uid);
   },
   getFireBaseBooksRef: () => {
     const uid = this.getUid();
-    Firebase.ref(uid + "/books");
+    return Firebase.ref(uid + "/books");
   },
   getFireBaseBookRef: bookId => {
     const uid = this.getUid();
-    Firebase.ref(uid + "/books/" + bookId);
+    return Firebase.ref(uid + "/books/" + bookId);
   }
 };
 

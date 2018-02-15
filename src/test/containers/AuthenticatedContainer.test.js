@@ -8,11 +8,45 @@ import thunk from "redux-thunk";
 
 const middlewares = [thunk]; // add your middlewares like `redux-thunk`
 let state = Constants.DEFAULT_STATE;
-const store = configureMockStore(middlewares)(state);
 
 describe("AuthenticatedContainer", () => {
   describe("rendering", () => {
     it("should render without error", () => {
+      const store = configureMockStore(middlewares)(state);
+      const tree = Renderer.create(
+        <Provider store={store}>
+          <AuthenticatedContainer />
+        </Provider>
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
+
+  describe("without a currrentBook set", () => {
+    it("should render the BookList", () => {
+      state["books"] = {
+        currentBook: {},
+        bookList: [{ bookID: "1234", name: "Foo" }]
+      };
+      const store = configureMockStore(middlewares)(state);
+      const tree = Renderer.create(
+        <Provider store={store}>
+          <AuthenticatedContainer />
+        </Provider>
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
+
+  describe("with a currrentBook set", () => {
+    it("should render the BookView", () => {
+      const book = { bookID: "1234", name: "Foo" };
+      state["books"] = {
+        currentBook: book,
+        bookList: [book]
+      };
+      const store = configureMockStore(middlewares)(state);
+
       const tree = Renderer.create(
         <Provider store={store}>
           <AuthenticatedContainer />

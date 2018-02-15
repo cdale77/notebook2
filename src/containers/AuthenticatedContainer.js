@@ -2,10 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import Nav from "../components/Nav";
 import SessionThunks from "../thunks/SessionThunks";
+import BookList from "../components/BookList";
+import BookView from "../components/BookView";
 
 const mapStateToProps = state => {
   return {
-    session: state.session
+    session: state.session,
+    books: state.books
   };
 };
 
@@ -18,11 +21,32 @@ const mapDispatchToProps = dispatch => {
 };
 
 class AuthenticatedContainer extends React.Component {
+  getCurrentBook() {
+    //return(this.props.books["currenBook"] || {});
+    return {};
+  }
+
+  getBookList() {
+    //return(this.props.books["bookList"] || []);
+    return [];
+  }
+
+  elementToDisplay() {
+    const currentBook = this.getCurrentBook();
+    const bookList = this.getBookList();
+    if (currentBook != {}) {
+      return <BookView book={currentBook} />;
+    } else {
+      return <BookList bookList={bookList} />;
+    }
+  }
+
   render() {
     const signedIn = this.props.session["signedIn"];
     return (
       <div className="authenticated-container">
         <Nav signedIn={signedIn} signOut={this.props.signOut} />
+        {this.elementToDisplay()}
       </div>
     );
   }
