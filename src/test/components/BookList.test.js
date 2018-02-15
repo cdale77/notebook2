@@ -11,7 +11,9 @@ describe("BookList", () => {
   describe("rendering", () => {
     describe("with a book list", () => {
       it("should render without error", () => {
-        const component = Renderer.create(<BookList bookList={bookList} />);
+        const component = Renderer.create(
+          <BookList bookList={bookList} createBook={jest.fn()} />
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
       });
@@ -19,7 +21,9 @@ describe("BookList", () => {
 
     describe("without a book list", () => {
       it("should render without error", () => {
-        const component = Renderer.create(<BookList bookList={[]} />);
+        const component = Renderer.create(
+          <BookList bookList={[]} createBook={jest.fn()} />
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
       });

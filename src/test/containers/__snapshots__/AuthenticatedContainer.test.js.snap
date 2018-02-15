@@ -14,11 +14,47 @@ exports[`AuthenticatedContainer rendering should render without error 1`] = `
     </div>
   </nav>
   <div
-    className="book-view"
+    className="book-list"
   >
     <h2>
-      NoteBook View
+      NoteBooks
     </h2>
+    <div
+      className="form fieldset new-book-form"
+    >
+      <form>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            className="input-name"
+            id="name"
+            name="name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="button"
+            disabled={false}
+            id="submit"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 `;
@@ -37,11 +73,47 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
     </div>
   </nav>
   <div
-    className="book-view"
+    className="book-list"
   >
     <h2>
-      NoteBook View
+      NoteBooks
     </h2>
+    <div
+      className="form fieldset new-book-form"
+    >
+      <form>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            className="input-name"
+            id="name"
+            name="name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="button"
+            disabled={false}
+            id="submit"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 `;
@@ -60,11 +132,47 @@ exports[`AuthenticatedContainer without a currrentBook set should render the Boo
     </div>
   </nav>
   <div
-    className="book-view"
+    className="book-list"
   >
     <h2>
-      NoteBook View
+      NoteBooks
     </h2>
+    <div
+      className="form fieldset new-book-form"
+    >
+      <form>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            className="input-name"
+            id="name"
+            name="name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="button"
+            disabled={false}
+            id="submit"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 `;

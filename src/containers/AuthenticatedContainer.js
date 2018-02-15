@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => {
   return {
     signOut: () => {
       dispatch(SessionThunks.signOut());
+    },
+    createBook: bookName => {
+      console.log("creating new book: ", bookName);
     }
   };
 };
@@ -35,7 +38,9 @@ class AuthenticatedContainer extends React.Component {
     if (currentBook["bookId"]) {
       return <BookView book={currentBook} />;
     } else {
-      return <BookList bookList={bookList} />;
+      return (
+        <BookList bookList={bookList} createBook={this.props.createBook} />
+      );
     }
   }
 

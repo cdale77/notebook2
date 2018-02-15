@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewBookForm rendering should render the form 1`] = `
+<div
+  className="form fieldset new-book-form"
+>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="name"
+      >
+        name
+      </label>
+      <input
+        className="input-name"
+        id="name"
+        name="name"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="button"
+        disabled={false}
+        id="submit"
+        name="submit"
+        onClick={[Function]}
+        type="submit"
+        value="Submit"
+      />
+    </div>
+  </form>
+</div>
+`;
