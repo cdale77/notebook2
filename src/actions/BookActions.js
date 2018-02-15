@@ -13,9 +13,10 @@ const BookActions = {
       message: message
     };
   },
-  destroyBook: () => {
+  destroyBook: bookId => {
     return {
-      type: Constants.ACTIONS.DESTROY_BOOK
+      type: Constants.ACTIONS.DESTROY_BOOK,
+      bookId: bookId
     };
   }
 };

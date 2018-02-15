@@ -22,9 +22,10 @@ describe("BookActions", () => {
   });
 
   it("should return the proper DESTROY_BOOK action", () => {
-    const result = BookActions.destroyBook();
+    const result = BookActions.destroyBook("abcd");
     expect(result).toEqual({
-      type: "DESTROY_BOOK"
+      type: "DESTROY_BOOK",
+      bookId: "abcd"
     });
   });
 });

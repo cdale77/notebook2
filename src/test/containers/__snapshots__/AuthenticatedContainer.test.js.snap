@@ -13,6 +13,13 @@ exports[`AuthenticatedContainer rendering should render without error 1`] = `
       NoteBook2
     </div>
   </nav>
+  <div
+    className="book-view"
+  >
+    <h2>
+      NoteBook View
+    </h2>
+  </div>
 </div>
 `;
 
@@ -29,6 +36,13 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
       NoteBook2
     </div>
   </nav>
+  <div
+    className="book-view"
+  >
+    <h2>
+      NoteBook View
+    </h2>
+  </div>
 </div>
 `;
 
@@ -45,5 +59,12 @@ exports[`AuthenticatedContainer without a currrentBook set should render the Boo
       NoteBook2
     </div>
   </nav>
+  <div
+    className="book-view"
+  >
+    <h2>
+      NoteBook View
+    </h2>
+  </div>
 </div>
 `;
