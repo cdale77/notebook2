@@ -39,6 +39,37 @@ describe("BookReducer", () => {
     });
   });
 
+  it("should handle GET_BOOKS_SUCCESS", () => {
+    const newBook = {
+      bookId: "1234",
+      name: "Foo"
+    };
+
+    const bookList = [newBook, existingBook];
+
+    const returnedState = BookReducer(
+      state,
+      BookActions.getBooksSuccess(bookList)
+    );
+
+    expect(returnedState).toEqual({
+      currentBook: {},
+      bookList: bookList
+    });
+  });
+
+  it("should handle GET_BOOKS_FAILURE", () => {
+    const returnedState = BookReducer(
+      state,
+      BookActions.getBooksFailure("Something went wrong.")
+    );
+
+    expect(returnedState).toEqual({
+      currentBook: {},
+      bookList: bookList
+    });
+  });
+
   it("should handle CREATE_BOOK_FAILURE", () => {
     const returnedState = BookReducer(state, BookActions.createBookFailure());
     expect(returnedState).toEqual({

@@ -10,6 +10,11 @@ function BookReducer(state = {}, action) {
         bookList: newList
       });
 
+    case Constants.ACTIONS.GET_BOOKS_SUCCESS:
+      return Object.assign({}, state, {
+        bookList: action.bookList
+      });
+
     case Constants.ACTIONS.DESTROY_BOOK:
       let filteredList = state.bookList.filter(book => {
         return book.bookId !== action.bookId;

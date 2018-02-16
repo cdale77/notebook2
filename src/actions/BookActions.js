@@ -13,6 +13,18 @@ const BookActions = {
       message: message
     };
   },
+  getBooksSuccess: bookList => {
+    return {
+      type: Constants.ACTIONS.GET_BOOKS_SUCCESS,
+      bookList: bookList
+    };
+  },
+  getBooksFailure: message => {
+    return {
+      type: Constants.ACTIONS.GET_BOOKS_FAILURE,
+      message: message
+    };
+  },
   destroyBook: bookId => {
     return {
       type: Constants.ACTIONS.DESTROY_BOOK,
