@@ -27,6 +27,30 @@ const BookThunks = {
 
       dispatch(RequestActions.requestEnd("CREATE_BOOK"));
     };
+  },
+  getBooks: () => {
+    return dispatch => {
+      dispatch(RequestActions.requestStart("GET_BOOKS"));
+      const fireBaseRef = Utils.getFireBaseBooksRef();
+
+      fireBaseRef
+        .once("value")
+        .then(resp => {
+          // Destructure the firebase data - make an array of book objects
+          const fbData = resp.val();
+          const bookList = Object.entries(fbData).map(array => {
+            // the first item in the array is the bookId/key, the
+            // second is the actual book object
+            return array[1];
+          });
+
+          dispatch(BookActions.getBooksSuccess(bookList));
+        })
+        .catch(error => {
+          dispatch(FlashActions.flashError(error.message));
+          dispatch(BookActions.getBooksFailure(error.message));
+        });
+    };
   }
 };
 

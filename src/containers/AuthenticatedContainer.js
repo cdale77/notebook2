@@ -20,11 +20,18 @@ const mapDispatchToProps = dispatch => {
     },
     createBook: name => {
       dispatch(BookThunks.createBook(name));
+    },
+    getBooks: () => {
+      dispatch(BookThunks.getBooks());
     }
   };
 };
 
 class AuthenticatedContainer extends React.Component {
+  componentDidMount() {
+    this.props.getBooks();
+  }
+
   getCurrentBook() {
     return this.props.books["currenBook"] || {};
   }
