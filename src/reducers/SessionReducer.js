@@ -2,13 +2,13 @@ import Constants from "../Constants";
 
 function sessionReducer(state = {}, action) {
   switch (action.type) {
-    case Constants.ACTIONS.NEW_SESSION_SUCCESS:
+    case Constants.ACTIONS.CREATE_SESSION_SUCCESS:
       return Object.assign({}, state, {
         signedIn: true,
         uid: action.uid
       });
 
-    case Constants.ACTIONS.NEW_SESSION_FAILURE:
+    case Constants.ACTIONS.CREATE_SESSION_FAILURE:
       return Object.assign({}, state, {
         signedIn: false,
         uid: ""

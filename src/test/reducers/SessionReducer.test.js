@@ -8,10 +8,10 @@ describe("SessionReducer", () => {
     expect(returnedState).toEqual({});
   });
 
-  it("should handle NEW_SESSION_SUCCESS", () => {
+  it("should handle CREATE_SESSION_SUCCESS", () => {
     const returnedState = SessionReducer(
       undefined,
-      SessionActions.newSessionSuccess("1234")
+      SessionActions.createSessionSuccess("1234")
     );
     expect(returnedState).toEqual({
       signedIn: true,
@@ -19,11 +19,11 @@ describe("SessionReducer", () => {
     });
   });
 
-  it("should handle NEW_SESSION_FAILURE", () => {
+  it("should handle CREATE_SESSION_FAILURE", () => {
     const msg = "Something went wrong";
     const returnedState = SessionReducer(
       undefined,
-      SessionActions.newSessionFailure(msg)
+      SessionActions.createSessionFailure(msg)
     );
     expect(returnedState).toEqual({
       signedIn: false,

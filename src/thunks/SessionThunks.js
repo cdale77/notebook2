@@ -6,19 +6,19 @@ import Firebase from "../Firebase";
 const SessionThunks = {
   signIn: (email, password) => {
     return dispatch => {
-      dispatch(RequestActions.requestStart("NEW_SESSION"));
+      dispatch(RequestActions.requestStart("CREATE_SESSION"));
       Firebase.auth()
         .signInWithEmailAndPassword(email, password)
         .then(_ => {
           const user = Firebase.auth().currentUser;
-          dispatch(SessionActions.newSessionSuccess(user.uid));
+          dispatch(SessionActions.createSessionSuccess(user.uid));
         })
         .catch(error => {
           dispatch(FlashActions.flashError(error.message));
-          dispatch(SessionActions.newSessionFailure(error.message));
+          dispatch(SessionActions.createSessionFailure(error.message));
         });
 
-      dispatch(RequestActions.requestEnd("NEW_SESSION"));
+      dispatch(RequestActions.requestEnd("CREATE_SESSION"));
     };
   },
   signOut: () => {
