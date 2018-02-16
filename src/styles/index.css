@@ -107,7 +107,8 @@ input[type="password"] {
   padding: 3rem;
   margin: 1.25rem;
   border-radius: 5px;
-  border: 1px solid #9b9b9b; }
+  border: 1px solid #9b9b9b;
+  cursor: pointer; }
 
 .book-name {
   font-size: 2em;

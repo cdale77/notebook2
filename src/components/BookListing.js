@@ -1,16 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const BookListing = ({ book }) => {
+const BookListing = ({ book, setCurrentBook }) => {
   return (
-    <div className="book-listing">
+    <div onClick={setCurrentBook} className="book-listing">
       <div className="book-name">{book.name}</div>
     </div>
   );
 };
 
 BookListing.propTypes = {
-  book: PropTypes.object
+  book: PropTypes.object,
+  setCurrentBook: PropTypes.func.isRequired
 };
 
 BookListing.defaultProps = {

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Nav from "../components/Nav";
 import SessionThunks from "../thunks/SessionThunks";
 import BookThunks from "../thunks/BookThunks";
+import BookActions from "../actions/BookActions";
 import BookList from "../components/BookList";
 import BookView from "../components/BookView";
 
@@ -23,6 +24,9 @@ const mapDispatchToProps = dispatch => {
     },
     getBooks: () => {
       dispatch(BookThunks.getBooks());
+    },
+    setCurrentBook: book => {
+      dispatch(BookActions.setCurrentBook(book));
     }
   };
 };
@@ -33,7 +37,7 @@ class AuthenticatedContainer extends React.Component {
   }
 
   getCurrentBook() {
-    return this.props.books["currenBook"] || {};
+    return this.props.books["currentBook"] || {};
   }
 
   getBookList() {
@@ -47,7 +51,11 @@ class AuthenticatedContainer extends React.Component {
       return <BookView book={currentBook} />;
     } else {
       return (
-        <BookList bookList={bookList} createBook={this.props.createBook} />
+        <BookList
+          bookList={bookList}
+          createBook={this.props.createBook}
+          setCurrentBook={this.props.setCurrentBook}
+        />
       );
     }
   }

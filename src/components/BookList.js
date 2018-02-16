@@ -3,10 +3,16 @@ import PropTypes from "prop-types";
 import NewBookForm from "./forms/NewBookForm";
 import BookListing from "./BookListing";
 
-const BookList = ({ bookList, createBook }) => {
+const BookList = ({ bookList, createBook, setCurrentBook }) => {
   const buildBookList = () => {
     return bookList.map(book => {
-      return <BookListing key={book["bookId"]} book={book} />;
+      return (
+        <BookListing
+          key={book["bookId"]}
+          book={book}
+          setCurrentBook={setCurrentBook.bind(this, book)}
+        />
+      );
     });
   };
 
@@ -21,7 +27,8 @@ const BookList = ({ bookList, createBook }) => {
 
 BookList.propTypes = {
   bookList: PropTypes.array,
-  createBook: PropTypes.func.isRequired
+  createBook: PropTypes.func.isRequired,
+  setCurrentBook: PropTypes.func.isRequired
 };
 
 BookList.defaultProps = {
