@@ -7,7 +7,11 @@ describe("Nav", () => {
     describe("logged in", () => {
       it("should render the component with the UserMenu", () => {
         const component = Renderer.create(
-          <Nav signedIn={true} signOut={jest.fn()} />
+          <Nav
+            signedIn={true}
+            signOut={jest.fn()}
+            clearCurrentBook={jest.fn()}
+          />
         );
 
         const tree = component.toJSON();
@@ -18,7 +22,11 @@ describe("Nav", () => {
     describe("logged out", () => {
       it("should render the component without the UserMenu", () => {
         const component = Renderer.create(
-          <Nav signedIn={false} signOut={jest.fn()} />
+          <Nav
+            signedIn={false}
+            signOut={jest.fn()}
+            clearCurrentBook={jest.fn()}
+          />
         );
 
         const tree = component.toJSON();

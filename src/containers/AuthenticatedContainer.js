@@ -27,6 +27,9 @@ const mapDispatchToProps = dispatch => {
     },
     setCurrentBook: book => {
       dispatch(BookActions.setCurrentBook(book));
+    },
+    clearCurrentBook: () => {
+      dispatch(BookActions.clearCurrentBook());
     }
   };
 };
@@ -64,7 +67,11 @@ class AuthenticatedContainer extends React.Component {
     const signedIn = this.props.session["signedIn"];
     return (
       <div className="authenticated-container">
-        <Nav signedIn={signedIn} signOut={this.props.signOut} />
+        <Nav
+          signedIn={signedIn}
+          signOut={this.props.signOut}
+          clearCurrentBook={this.props.clearCurrentBook}
+        />
         {this.elementToDisplay()}
       </div>
     );

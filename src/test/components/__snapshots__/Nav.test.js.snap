@@ -13,6 +13,12 @@ exports[`Nav rendering logged in should render the component with the UserMenu 1
     className="user-menu"
   >
     <span
+      className="clear-current-book-link"
+      onClick={[Function]}
+    >
+      All NoteBooks
+    </span>
+    <span
       className="signout-link"
       onClick={[Function]}
     >

@@ -7,7 +7,9 @@ import UserMenu from "../../components/UserMenu";
 describe("UserMenu", () => {
   describe("rendering", () => {
     it("should render without error", () => {
-      const component = Renderer.create(<UserMenu signOut={jest.fn()} />);
+      const component = Renderer.create(
+        <UserMenu signOut={jest.fn()} clearCurrentBook={jest.fn()} />
+      );
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot;
     });
@@ -21,7 +23,7 @@ describe("UserMenu", () => {
       const spy = jest.spyOn(callBack, "signOut");
       const component = TestUtils.renderIntoDocument(
         <TestWrapper>
-          <UserMenu signOut={callBack.signOut} />
+          <UserMenu signOut={callBack.signOut} clearCurrentBook={jest.fn()} />
         </TestWrapper>
       );
 

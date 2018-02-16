@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import UserMenu from "./UserMenu";
 
-const LargeNav = ({ signedIn, signOut }) => {
+const LargeNav = ({ signedIn, signOut, clearCurrentBook }) => {
   const userMenu = () => {
     if (signedIn) {
-      return <UserMenu signOut={signOut} />;
+      return <UserMenu signOut={signOut} clearCurrentBook={clearCurrentBook} />;
     }
   };
   return (
@@ -17,6 +17,7 @@ const LargeNav = ({ signedIn, signOut }) => {
 };
 
 LargeNav.propTypes = {
+  clearCurrentBook: PropTypes.func,
   signOut: PropTypes.func.isRequired,
   signedIn: PropTypes.bool
 };

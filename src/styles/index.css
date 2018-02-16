@@ -86,6 +86,10 @@ input[type="password"] {
   color: white; }
 
 .signout-link {
+  cursor: pointer;
+  padding-left: 1rem; }
+
+.clear-current-book-link {
   cursor: pointer; }
 
 .book-list {
