@@ -25,6 +25,12 @@ const BookActions = {
       message: message
     };
   },
+  setCurrentBook: book => {
+    return {
+      type: Constants.ACTIONS.SET_CURRENT_BOOK,
+      book: book
+    };
+  },
   destroyBook: bookId => {
     return {
       type: Constants.ACTIONS.DESTROY_BOOK,

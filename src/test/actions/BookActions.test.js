@@ -1,15 +1,15 @@
 import BookActions from "../../actions/BookActions";
+const book1 = {
+  bookId: "1324",
+  name: "Test"
+};
 
 describe("BookActions", () => {
   it("should return the proper CREATE_BOOK_SUCCESS action", () => {
-    const book = {
-      bookId: "1324",
-      name: "Test"
-    };
-    const result = BookActions.createBookSuccess(book);
+    const result = BookActions.createBookSuccess(book1);
     expect(result).toEqual({
       type: "CREATE_BOOK_SUCCESS",
-      book: book
+      book: book1
     });
   });
 
@@ -22,11 +22,6 @@ describe("BookActions", () => {
   });
 
   it("should return the proper GET_BOOKS_SUCCESS action", () => {
-    const book1 = {
-      bookId: "1324",
-      name: "Test"
-    };
-
     const book2 = {
       bookId: "abcd",
       name: "Foo"
@@ -46,6 +41,14 @@ describe("BookActions", () => {
     expect(result).toEqual({
       type: "GET_BOOKS_FAILURE",
       message: "something went wrong"
+    });
+  });
+
+  it("should return the proper SET_CURRENT_BOOK action", () => {
+    const result = BookActions.setCurrentBook(book1);
+    expect(result).toEqual({
+      type: "SET_CURRENT_BOOK",
+      book: book1
     });
   });
 
