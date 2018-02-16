@@ -98,6 +98,21 @@ input[type="password"] {
 .new-book-form .form-group {
   margin-right: 0.75rem; }
 
+.book-cards {
+  display: flex;
+  flex-wrap: wrap; }
+
+.book-listing {
+  background-color: white;
+  padding: 3rem;
+  margin: 1.25rem;
+  border-radius: 5px;
+  border: 1px solid #9b9b9b; }
+
+.book-name {
+  font-size: 2em;
+  letter-spacing: 0.1em; }
+
 body {
   background-color: #d5d5d5;
   margin: 0; }

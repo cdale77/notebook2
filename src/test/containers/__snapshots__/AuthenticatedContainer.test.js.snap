@@ -51,6 +51,9 @@ exports[`AuthenticatedContainer rendering should render without error 1`] = `
         </div>
       </form>
     </div>
+    <div
+      className="book-cards"
+    />
   </div>
 </div>
 `;
@@ -106,6 +109,19 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
         </div>
       </form>
     </div>
+    <div
+      className="book-cards"
+    >
+      <div
+        className="book-listing"
+      >
+        <div
+          className="book-name"
+        >
+          Foo
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -160,6 +176,19 @@ exports[`AuthenticatedContainer without a currrentBook set should render the Boo
           />
         </div>
       </form>
+    </div>
+    <div
+      className="book-cards"
+    >
+      <div
+        className="book-listing"
+      >
+        <div
+          className="book-name"
+        >
+          Foo
+        </div>
+      </div>
     </div>
   </div>
 </div>

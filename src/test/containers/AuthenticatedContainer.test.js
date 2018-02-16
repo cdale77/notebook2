@@ -26,7 +26,7 @@ describe("AuthenticatedContainer", () => {
     it("should render the BookList", () => {
       state["books"] = {
         currentBook: {},
-        bookList: [{ bookID: "1234", name: "Foo" }]
+        bookList: [{ bookId: "1234", name: "Foo" }]
       };
       const store = configureMockStore(middlewares)(state);
       const tree = Renderer.create(
@@ -40,7 +40,7 @@ describe("AuthenticatedContainer", () => {
 
   describe("with a currrentBook set", () => {
     it("should render the BookView", () => {
-      const book = { bookID: "1234", name: "Foo" };
+      const book = { bookId: "1234", name: "Foo" };
       state["books"] = {
         currentBook: book,
         bookList: [book]

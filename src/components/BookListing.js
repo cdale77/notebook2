@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const BookListing = ({ book }) => {
-  return <div className="book-listing">BookListing</div>;
+  return (
+    <div className="book-listing">
+      <div className="book-name">{book.name}</div>
+    </div>
+  );
 };
 
 BookListing.propTypes = {
