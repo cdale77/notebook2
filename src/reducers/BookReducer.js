@@ -20,13 +20,19 @@ function BookReducer(state = {}, action) {
         currentBook: action.book
       });
 
+    case Constants.ACTIONS.CLEAR_CURRENT_BOOK:
+      return Object.assign({}, state, {
+        currentBook: {}
+      });
+
     case Constants.ACTIONS.DESTROY_BOOK:
       let filteredList = state.bookList.filter(book => {
         return book.bookId !== action.bookId;
       });
 
       return Object.assign({}, state, {
-        bookList: filteredList
+        bookList: filteredList,
+        currentBook: {}
       });
 
     default:

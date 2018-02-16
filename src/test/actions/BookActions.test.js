@@ -52,6 +52,13 @@ describe("BookActions", () => {
     });
   });
 
+  it("should return the proper CLEAR_CURRENT_BOOK action", () => {
+    const result = BookActions.clearCurrentBook();
+    expect(result).toEqual({
+      type: "CLEAR_CURRENT_BOOK"
+    });
+  });
+
   it("should return the proper DESTROY_BOOK action", () => {
     const result = BookActions.destroyBook("abcd");
     expect(result).toEqual({

@@ -90,6 +90,16 @@ describe("BookReducer", () => {
     });
   });
 
+  it("should handle CLEAR_CURRENT_BOOK", () => {
+    state["currentBook"] = existingBook;
+    const returnedState = BookReducer(state, BookActions.clearCurrentBook());
+
+    expect(returnedState).toEqual({
+      currentBook: {},
+      bookList: bookList
+    });
+  });
+
   it("should handle DESTROY_BOOK", () => {
     const returnedState = BookReducer(
       state,

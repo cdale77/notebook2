@@ -72,56 +72,11 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
     </div>
   </nav>
   <div
-    className="book-list"
+    className="book-view"
   >
     <h2>
-      NoteBooks
+      NoteBook View
     </h2>
-    <div
-      className="form fieldset new-book-form"
-    >
-      <form>
-        <div
-          className="form-group"
-        >
-          <input
-            className="input-name"
-            id="name"
-            name="name"
-            onChange={[Function]}
-            placeholder="Name"
-            type="text"
-            value=""
-          />
-        </div>
-        <div
-          className="form-group"
-        >
-          <input
-            className="button"
-            disabled={false}
-            id="submit"
-            name="submit"
-            onClick={[Function]}
-            type="submit"
-            value="Submit"
-          />
-        </div>
-      </form>
-    </div>
-    <div
-      className="book-cards"
-    >
-      <div
-        className="book-listing"
-      >
-        <div
-          className="book-name"
-        >
-          Foo
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -182,6 +137,7 @@ exports[`AuthenticatedContainer without a currrentBook set should render the Boo
     >
       <div
         className="book-listing"
+        onClick={[Function]}
       >
         <div
           className="book-name"

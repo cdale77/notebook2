@@ -31,6 +31,11 @@ const BookActions = {
       book: book
     };
   },
+  clearCurrentBook: () => {
+    return {
+      type: Constants.ACTIONS.CLEAR_CURRENT_BOOK
+    };
+  },
   destroyBook: bookId => {
     return {
       type: Constants.ACTIONS.DESTROY_BOOK,
