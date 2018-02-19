@@ -13,9 +13,10 @@ const mapDispatchToProps = dispatch => {
 
 class BookViewContainer extends React.Component {
   render() {
+    const currentBook = this.props.books["currentBook"]
     return (
       <div className="book-view">
-        <h2>NoteBook View</h2>
+        <h2>{currentBook["name"]}</h2>
       </div>
     );
   }

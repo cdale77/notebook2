@@ -118,6 +118,13 @@ input[type="password"] {
   font-size: 2em;
   letter-spacing: 0.1em; }
 
+.book-view h2 {
+  background-color: white;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #9b9b9b; }
+
 body {
   background-color: #d5d5d5;
   margin: 0; }
