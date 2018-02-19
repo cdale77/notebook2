@@ -91,6 +91,11 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
       >
         NoteEditor
       </div>
+      <div
+        className="note-view"
+      >
+        NoteView
+      </div>
     </div>
   </div>
 </div>
