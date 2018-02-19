@@ -75,8 +75,13 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
     className="book-view"
   >
     <h2>
-      NoteBook View
+      Foo
     </h2>
+    <div
+      className="book-view"
+    >
+      BookView
+    </div>
   </div>
 </div>
 `;

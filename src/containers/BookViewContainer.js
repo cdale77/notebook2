@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import BookView from "../components/BookView";
 
 const mapStateToProps = state => {
   return {
@@ -13,10 +14,11 @@ const mapDispatchToProps = dispatch => {
 
 class BookViewContainer extends React.Component {
   render() {
-    const currentBook = this.props.books["currentBook"]
+    const currentBook = this.props.books["currentBook"];
     return (
       <div className="book-view">
         <h2>{currentBook["name"]}</h2>
+        <BookView book={currentBook} />
       </div>
     );
   }
