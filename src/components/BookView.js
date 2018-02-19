@@ -1,8 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import NoteList from "./NoteList";
 
 const BookView = ({ book }) => {
-  return <div className="book-view">BookView</div>;
+  return (
+    <div className="book-view">
+      BookView
+      <NoteList notes={[]} />
+    </div>
+  );
 };
 
 BookView.propTypes = {
