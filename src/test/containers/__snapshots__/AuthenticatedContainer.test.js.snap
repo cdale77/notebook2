@@ -83,7 +83,38 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
       <div
         className="note-list"
       >
-        NoteList
+        <div
+          className="form fieldset new-note-form"
+        >
+          <form>
+            <div
+              className="form-group"
+            >
+              <input
+                className="input-name"
+                id="name"
+                name="name"
+                onChange={[Function]}
+                placeholder="Name"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <input
+                className="button"
+                disabled={false}
+                id="submit"
+                name="submit"
+                onClick={[Function]}
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
       </div>
       <div
         className="note-editor"

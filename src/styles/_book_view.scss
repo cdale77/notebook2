@@ -17,15 +17,18 @@
 
 .note-list {
   order: 1;
-  flex-grow: 1
+  flex: 0 1 12%;
+  //flex-grow: 1
 }
 
 .note-editor {
   order: 2;
-  flex-grow: 4;
+  flex: 0 1 44%;
+  //flex-grow: 4;
 }
 
 .note-view {
   order: 3;
-  flex-grow: 4;
+  flex: 0 1 44%;
+  //flex-grow: 4;
 }

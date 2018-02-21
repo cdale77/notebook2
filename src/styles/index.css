@@ -134,15 +134,15 @@ input[type="password"] {
 
 .note-list {
   order: 1;
-  flex-grow: 1; }
+  flex: 0 1 12%; }
 
 .note-editor {
   order: 2;
-  flex-grow: 4; }
+  flex: 0 1 44%; }
 
 .note-view {
   order: 3;
-  flex-grow: 4; }
+  flex: 0 1 44%; }
 
 body {
   background-color: #d5d5d5;

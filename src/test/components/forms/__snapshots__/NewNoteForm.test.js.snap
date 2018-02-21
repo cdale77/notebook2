@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewNoteForm rendering should render the form 1`] = `
+<div
+  className="form fieldset new-note-form"
+>
+  <form>
+    <div
+      className="form-group"
+    >
+      <input
+        className="input-name"
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="button"
+        disabled={false}
+        id="submit"
+        name="submit"
+        onClick={[Function]}
+        type="submit"
+        value="Submit"
+      />
+    </div>
+  </form>
+</div>
+`;
