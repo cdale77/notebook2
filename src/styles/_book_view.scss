@@ -1,7 +1,31 @@
-.book-view h2 {
-  background-color: white;
+.book-view-container h2 {
   margin: 0;
   padding: 0.75rem 1rem;
   border-top: 1px solid $light-gray;
   border-bottom: 1px solid $medium-gray;
+}
+
+.book-view {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+}
+
+.note-list, .note-editor {
+  border-right: 1px solid $medium-gray;
+}
+
+.note-list {
+  order: 1;
+  flex-grow: 1
+}
+
+.note-editor {
+  order: 2;
+  flex-grow: 4;
+}
+
+.note-view {
+  order: 3;
+  flex-grow: 4;
 }

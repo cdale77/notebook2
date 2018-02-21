@@ -7,7 +7,6 @@ import NoteView from "./NoteView";
 const BookView = ({ book }) => {
   return (
     <div className="book-view">
-      BookView
       <NoteList notes={[]} />
       <NoteEditor note={{}} />
       <NoteView note={{}} />

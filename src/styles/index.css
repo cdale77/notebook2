@@ -118,12 +118,31 @@ input[type="password"] {
   font-size: 2em;
   letter-spacing: 0.1em; }
 
-.book-view h2 {
-  background-color: white;
+.book-view-container h2 {
   margin: 0;
   padding: 0.75rem 1rem;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #9b9b9b; }
+
+.book-view {
+  background-color: white;
+  height: 100vh;
+  display: flex; }
+
+.note-list, .note-editor {
+  border-right: 1px solid #9b9b9b; }
+
+.note-list {
+  order: 1;
+  flex-grow: 1; }
+
+.note-editor {
+  order: 2;
+  flex-grow: 4; }
+
+.note-view {
+  order: 3;
+  flex-grow: 4; }
 
 body {
   background-color: #d5d5d5;

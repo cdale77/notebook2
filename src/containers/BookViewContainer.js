@@ -16,7 +16,7 @@ class BookViewContainer extends React.Component {
   render() {
     const currentBook = this.props.books["currentBook"];
     return (
-      <div className="book-view">
+      <div className="book-view-container">
         <h2>{currentBook["name"]}</h2>
         <BookView book={currentBook} />
       </div>

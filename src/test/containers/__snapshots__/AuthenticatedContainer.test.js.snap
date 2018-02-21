@@ -72,7 +72,7 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
     </div>
   </nav>
   <div
-    className="book-view"
+    className="book-view-container"
   >
     <h2>
       Foo
@@ -80,7 +80,6 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
     <div
       className="book-view"
     >
-      BookView
       <div
         className="note-list"
       >
