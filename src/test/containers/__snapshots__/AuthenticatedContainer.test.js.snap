@@ -88,30 +88,34 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
         >
           <form>
             <div
-              className="form-group"
+              className="fieldset-wrapper"
             >
-              <input
-                className="input-name"
-                id="name"
-                name="name"
-                onChange={[Function]}
-                placeholder="Name"
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              className="form-group"
-            >
-              <input
-                className="button"
-                disabled={false}
-                id="submit"
-                name="submit"
-                onClick={[Function]}
-                type="submit"
-                value="Submit"
-              />
+              <div
+                className="form-group"
+              >
+                <input
+                  className="input-name"
+                  id="name"
+                  name="name"
+                  onChange={[Function]}
+                  placeholder="Name"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <input
+                  className="button"
+                  disabled={false}
+                  id="submit"
+                  name="submit"
+                  onClick={[Function]}
+                  type="submit"
+                  value="Submit"
+                />
+              </div>
             </div>
           </form>
         </div>

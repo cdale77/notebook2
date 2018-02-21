@@ -4,10 +4,10 @@ import NoteList from "./NoteList";
 import NoteEditor from "./NoteEditor";
 import NoteView from "./NoteView";
 
-const BookView = ({ book }) => {
+const BookView = ({ book, createNote }) => {
   return (
     <div className="book-view">
-      <NoteList notes={[]} />
+      <NoteList notes={[]} createNote={createNote} />
       <NoteEditor note={{}} />
       <NoteView note={{}} />
     </div>
@@ -15,7 +15,8 @@ const BookView = ({ book }) => {
 };
 
 BookView.propTypes = {
-  book: PropTypes.object
+  book: PropTypes.object,
+  createNote: PropTypes.func.isRequired
 };
 
 BookView.defaultProps = {

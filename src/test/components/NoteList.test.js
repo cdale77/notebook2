@@ -10,7 +10,9 @@ describe("NoteView", () => {
   describe("rendering", () => {
     describe("without notes", () => {
       it("should render without error", () => {
-        const component = Renderer.create(<NoteList notes={[]} />);
+        const component = Renderer.create(
+          <NoteList notes={[]} createNote={jest.fn()} />
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
       });
@@ -18,7 +20,9 @@ describe("NoteView", () => {
 
     describe("with notes", () => {
       it("should render without error", () => {
-        const component = Renderer.create(<NoteList notes={notes} />);
+        const component = Renderer.create(
+          <NoteList notes={notes} createNote={jest.fn()} />
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
       });

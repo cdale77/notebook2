@@ -9,7 +9,13 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    createNote: (bookId, form) => {
+      console.log("createNote");
+      console.log("bookId: ", bookId);
+      console.log("noteName: ", form.name);
+    }
+  };
 };
 
 class BookViewContainer extends React.Component {
@@ -18,7 +24,10 @@ class BookViewContainer extends React.Component {
     return (
       <div className="book-view-container">
         <h2>{currentBook["name"]}</h2>
-        <BookView book={currentBook} />
+        <BookView
+          book={currentBook}
+          createNote={this.props.createNote.bind(this, currentBook["bookId"])}
+        />
       </div>
     );
   }
