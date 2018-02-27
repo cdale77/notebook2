@@ -3,13 +3,20 @@ import Renderer from "react-test-renderer";
 import BookView from "../../components/BookView";
 
 let book = { bookId: "abcd", name: "Foo" };
+let currentNote = { noteId: "123", bookId: "abcd", name: "Note", text: "Bar" };
+let noteList = [currentNote];
 
 describe("BookView", () => {
   describe("rendering", () => {
     describe("without a book", () => {
       it("should render without error", () => {
         const component = Renderer.create(
-          <BookView book={{}} createNote={jest.fn()} />
+          <BookView
+            book={{}}
+            noteList={[]}
+            currentNote={{}}
+            createNote={jest.fn()}
+          />
         );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
@@ -19,7 +26,12 @@ describe("BookView", () => {
     describe("with a book", () => {
       it("should render without error", () => {
         const component = Renderer.create(
-          <BookView book={book} createNote={jest.fn()} />
+          <BookView
+            book={book}
+            noteList={[]}
+            currentNote={{}}
+            createNote={jest.fn()}
+          />
         );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
