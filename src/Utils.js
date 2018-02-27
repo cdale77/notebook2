@@ -33,6 +33,14 @@ const Utils = {
   getFireBaseBookRef: bookId => {
     const uid = Utils.getUid();
     return Firebase.database().ref(uid + "/books/" + bookId);
+  },
+  getFireBaseNotesRef: bookId => {
+    const uid = Utils.getUid();
+    return Firebase.database().ref(uid + "/notes/" + bookId);
+  },
+  getFireBaseNoteRef: (bookId, noteId) => {
+    const uid = Utils.getUid();
+    return Firebase.database().ref(uid + "/notes/" + bookId + "/" + noteId);
   }
 };
 
