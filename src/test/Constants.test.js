@@ -14,6 +14,10 @@ describe("Constants", () => {
         books: {
           bookList: [],
           currentBook: {}
+        },
+        notes: {
+          noteList: [],
+          currentNote: {}
         }
       };
 

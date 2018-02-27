@@ -6,6 +6,7 @@ import Utils from "./Utils";
 import SessionReducer from "./reducers/SessionReducer";
 import FlashReducer from "./reducers/FlashReducer";
 import BookReducer from "./reducers/BookReducer";
+import NoteReducer from "./reducers/NoteReducer";
 
 // Set up the initial state. If there is something in localstorage, grab it. If
 // not, then use the specified default state.
@@ -17,7 +18,8 @@ const initialState = persistedState == null ? defaultState : persistedState;
 const appReducer = combineReducers({
   session: SessionReducer,
   flash: FlashReducer,
-  books: BookReducer
+  books: BookReducer,
+  notes: NoteReducer
 });
 
 // clear state on log out
