@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import BookView from "../components/BookView";
+import NoteThunks from "../thunks/NoteThunks";
 
 const mapStateToProps = state => {
   return {
@@ -11,9 +12,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createNote: (bookId, form) => {
-      console.log("createNote");
+      console.log("container");
       console.log("bookId: ", bookId);
-      console.log("noteName: ", form.name);
+      console.log("name: ", form.name);
+      dispatch(NoteThunks.createNote(bookId, form.name));
     }
   };
 };
