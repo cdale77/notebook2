@@ -12,9 +12,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createNote: (bookId, form) => {
-      console.log("container");
-      console.log("bookId: ", bookId);
-      console.log("name: ", form.name);
       dispatch(NoteThunks.createNote(bookId, form.name));
     }
   };
