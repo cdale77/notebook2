@@ -14,11 +14,19 @@ const mapDispatchToProps = dispatch => {
   return {
     createNote: (bookId, form) => {
       dispatch(NoteThunks.createNote(bookId, form.name));
+    },
+    getNotes: bookId => {
+      dispatch(NoteThunks.getNotes(bookId));
     }
   };
 };
 
 class BookViewContainer extends React.Component {
+  componentDidMount() {
+    const book = this.props.books["currentBook"] || {};
+    this.props.getNotes(book["bookId"]);
+  }
+
   render() {
     const currentBook = this.props.books["currentBook"];
     const noteList = this.props.notes["noteList"];

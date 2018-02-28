@@ -50,6 +50,8 @@ const BookThunks = {
           dispatch(FlashActions.flashError(error.message));
           dispatch(BookActions.getBooksFailure(error.message));
         });
+
+      dispatch(RequestActions.requestEnd("GET_BOOKS"));
     };
   }
 };

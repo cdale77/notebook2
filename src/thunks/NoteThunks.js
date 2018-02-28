@@ -10,6 +10,8 @@ const NoteThunks = {
       const noteId = new Date().getTime();
       const fireBaseRef = Utils.getFireBaseNoteRef(bookId, noteId);
       const newNote = {
+        noteId: noteId,
+        bookId: bookId,
         name: name,
         text: ""
       };
@@ -27,9 +29,29 @@ const NoteThunks = {
       dispatch(RequestActions.requestEnd("CREATE_NOTE"));
     };
   },
-  getNotes: () => {
+  getNotes: bookId => {
     return dispatch => {
       dispatch(RequestActions.requestStart("GET_NOTES"));
+      const fireBaseRef = Utils.getFireBaseNotesRef(bookId);
+
+      fireBaseRef
+        .once("value")
+        .then(resp => {
+          // Destructure the firebase data - make an array of note objects
+          const fbData = resp.val();
+          const noteList = Object.entries(fbData).map(array => {
+            // the first item in the array is the bookId/key, the
+            // second is the actual book object
+            return array[1];
+          });
+
+          dispatch(NoteActions.getNotesSuccess(noteList));
+        })
+        .catch(error => {
+          dispatch(FlashActions.flashError(error.message));
+          dispatch(NoteActions.getNotesFailure(error.message));
+        });
+      dispatch(RequestActions.requestEnd("GET_NOTES"));
     };
   }
 };
