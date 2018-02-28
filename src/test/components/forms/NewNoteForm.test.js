@@ -47,7 +47,7 @@ describe("NewNoteForm", () => {
       expect(spy).toHaveBeenCalled();
       expect(callBack.onSubmit.mock.calls.length).toEqual(1);
 
-      const form = { name: "changed" };
+      const form = { name: "changed", expanded: false };
       expect(callBack.onSubmit.mock.calls).toEqual([[form]]);
     });
   });

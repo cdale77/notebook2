@@ -6,7 +6,17 @@ import SubmitButton from "./SubmitButton";
 class NewNoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "" };
+    this.state = { name: "", expanded: false };
+  }
+
+  toggleExpander() {
+    this.setState({ expanded: !this.state.expanded });
+  }
+
+  expanderClassName() {
+    const base = "expander-trigger new-note-form-expander";
+    if (this.state.expanded === true) return base;
+    else return base + " expander-hidden";
   }
 
   handleNameChange(e) {
@@ -16,22 +26,31 @@ class NewNoteForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.onSubmit(this.state);
+    this.setState({ expanded: false });
   }
 
   render() {
     return (
-      <div className="form fieldset new-note-form">
-        <form>
-          <div className="fieldset-wrapper">
-            <TextInput
-              name="name"
-              title="Name"
-              value={this.state.name}
-              onChange={this.handleNameChange.bind(this)}
-            />
-            <SubmitButton onSubmit={this.onSubmit.bind(this)} />
-          </div>
-        </form>
+      <div className="expander">
+        <button
+          onClick={this.toggleExpander.bind(this)}
+          className={"new-note-expander " + this.expanderClassName()}
+        >
+          + Add Note
+        </button>
+        <div className="form fieldset new-note-form expander-content">
+          <form>
+            <div className="fieldset-wrapper">
+              <TextInput
+                name="name"
+                title="Name"
+                value={this.state.name}
+                onChange={this.handleNameChange.bind(this)}
+              />
+              <SubmitButton onSubmit={this.onSubmit.bind(this)} />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

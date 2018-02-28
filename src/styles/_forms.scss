@@ -42,7 +42,7 @@ input[type="password"] {
   }
 }
 
-.button {
+.button,button {
   color: white;
   font-size: 1.2em;
   background-color: $action-color;
@@ -58,4 +58,8 @@ input[type="password"] {
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }
+}
+
+.button-small {
+  font-size: 0.9em;
 }

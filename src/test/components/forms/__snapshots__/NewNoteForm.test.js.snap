@@ -2,39 +2,49 @@
 
 exports[`NewNoteForm rendering should render the form 1`] = `
 <div
-  className="form fieldset new-note-form"
+  className="expander"
 >
-  <form>
-    <div
-      className="fieldset-wrapper"
-    >
+  <button
+    className="new-note-expander expander-trigger new-note-form-expander expander-hidden"
+    onClick={[Function]}
+  >
+    + Add Note
+  </button>
+  <div
+    className="form fieldset new-note-form expander-content"
+  >
+    <form>
       <div
-        className="form-group"
+        className="fieldset-wrapper"
       >
-        <input
-          className="input-name"
-          id="name"
-          name="name"
-          onChange={[Function]}
-          placeholder="Name"
-          type="text"
-          value=""
-        />
+        <div
+          className="form-group"
+        >
+          <input
+            className="input-name"
+            id="name"
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="button"
+            disabled={false}
+            id="submit"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+            value="Submit"
+          />
+        </div>
       </div>
-      <div
-        className="form-group"
-      >
-        <input
-          className="button"
-          disabled={false}
-          id="submit"
-          name="submit"
-          onClick={[Function]}
-          type="submit"
-          value="Submit"
-        />
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
 `;
