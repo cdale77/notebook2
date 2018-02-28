@@ -144,6 +144,16 @@ input[type="password"] {
   order: 3;
   flex: 0 1 44%; }
 
+.note-listing {
+  text-align: center;
+  border-top: 1px solid #9b9b9b;
+  padding: 1em;
+  font-size: 1.3em;
+  cursor: pointer; }
+
+.note-listing:hover {
+  background-color: #ddd; }
+
 body {
   background-color: #d5d5d5;
   margin: 0; }
