@@ -14,8 +14,10 @@ class NoteView extends React.Component {
 
   render() {
     return (
-      <div className="note-view" dangerouslySetInnerHTML={this.createMarkup()}>
-      </div>
+      <div
+        className="note-view"
+        dangerouslySetInnerHTML={this.createMarkup()}
+      />
     );
   }
 }

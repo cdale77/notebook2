@@ -2,19 +2,32 @@ import Store from "./Store";
 import Firebase from "./Firebase";
 
 const Utils = {
-  debounce: (func, wait = 500, immediate) => {
-    let timeout;
+  throttle: (callback, wait = 500, context = this) => {
+    let timeout = null;
+    let callbackArgs = null;
+
+    const later = () => {
+      callback.apply(context, callbackArgs);
+      timeout = null;
+    };
+
     return function() {
-      let context = this,
-        args = arguments;
-      let later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      let callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+      if (!timeout) {
+        callbackArgs = arguments;
+        timeout = setTimeout(later, wait);
+      }
+    };
+  },
+  debounce: (fn, delay = 500) => {
+    let timerId;
+    return function(...args) {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+        fn(...args);
+        timerId = null;
+      }, delay);
     };
   },
   getUid: () => {

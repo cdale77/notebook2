@@ -133,7 +133,28 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
       <div
         className="note-editor"
       >
-        NoteEditor
+        <div
+          className="editor-tools"
+        >
+          <div
+            className="save-icon hidden"
+          >
+            <span
+              aria-label="save-icon"
+              role="img"
+            >
+              💾
+            </span>
+          </div>
+        </div>
+        <form>
+          <textarea
+            id="note-text"
+            name="note-text"
+            onChange={[Function]}
+            value={undefined}
+          />
+        </form>
       </div>
       <div
         className="note-view"
@@ -142,9 +163,7 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
             "__html": undefined,
           }
         }
-      >
-        NoteView
-      </div>
+      />
     </div>
   </div>
 </div>

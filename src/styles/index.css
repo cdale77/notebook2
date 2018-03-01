@@ -178,3 +178,6 @@ input[type="password"] {
 body {
   background-color: #d5d5d5;
   margin: 0; }
+
+.hidden {
+  display: none; }
