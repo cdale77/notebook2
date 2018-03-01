@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import BookView from "../components/BookView";
 import NoteThunks from "../thunks/NoteThunks";
+import NoteActions from "../actions/NoteActions";
 
 const mapStateToProps = state => {
   return {
@@ -17,6 +18,9 @@ const mapDispatchToProps = dispatch => {
     },
     getNotes: bookId => {
       dispatch(NoteThunks.getNotes(bookId));
+    },
+    setCurrentNote: noteId => {
+      dispatch(NoteActions.setCurrentNote(noteId));
     }
   };
 };
@@ -38,6 +42,7 @@ class BookViewContainer extends React.Component {
           book={currentBook}
           noteList={noteList}
           currentNote={currentNote}
+          setCurrentNote={this.props.setCurrentNote}
           createNote={this.props.createNote.bind(this, currentBook["bookId"])}
         />
       </div>
