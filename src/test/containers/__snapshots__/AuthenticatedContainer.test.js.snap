@@ -137,6 +137,11 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
       </div>
       <div
         className="note-view"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": undefined,
+          }
+        }
       >
         NoteView
       </div>

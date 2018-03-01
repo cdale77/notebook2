@@ -18,8 +18,8 @@ const BookView = ({
         createNote={createNote}
         setCurrentNote={setCurrentNote}
       />
-      <NoteEditor note={{}} />
-      <NoteView note={{}} />
+      <NoteEditor note={currentNote} />
+      <NoteView note={currentNote} />
     </div>
   );
 };
