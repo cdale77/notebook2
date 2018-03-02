@@ -2,6 +2,11 @@ import Constants from "../Constants";
 
 function NoteReducer(state = {}, action) {
   switch (action.type) {
+    case Constants.ACTIONS.UPDATE_NOTE_SUCCESS:
+      return Object.assign({}, state, {
+        currentNote: action.note
+      });
+
     case Constants.ACTIONS.CREATE_NOTE_SUCCESS:
       let newList = state.noteList.slice();
       newList.unshift(action.note);

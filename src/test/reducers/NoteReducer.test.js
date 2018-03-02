@@ -20,6 +20,28 @@ describe("NoteReducer", () => {
     expect(returnedState).toEqual({});
   });
 
+  it("should handle UPDATE_NOTE_SUCCESS", () => {
+    const updatedNote = {
+      noteId: "abcd",
+      name: "Foo"
+    };
+
+    const existingState = {
+      currentNote: existingNote,
+      noteList: noteList
+    };
+
+    const returnedState = NoteReducer(
+      existingState,
+      NoteActions.updateNoteSuccess(updatedNote)
+    );
+
+    expect(returnedState).toEqual({
+      currentNote: updatedNote,
+      noteList: noteList
+    });
+  });
+
   it("should handle CREATE_NOTE_SUCCESS", () => {
     const newNote = {
       noteId: "1234",

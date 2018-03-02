@@ -1,6 +1,18 @@
 import Constants from "../Constants";
 
 const NoteActions = {
+  updateNoteSuccess: note => {
+    return {
+      type: Constants.ACTIONS.UPDATE_NOTE_SUCCESS,
+      note: note
+    };
+  },
+  updateNoteFailure: message => {
+    return {
+      type: Constants.ACTIONS.UPDATE_NOTE_FAILURE,
+      message: message
+    };
+  },
   createNoteSuccess: note => {
     return {
       type: Constants.ACTIONS.CREATE_NOTE_SUCCESS,

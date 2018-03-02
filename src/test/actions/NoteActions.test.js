@@ -6,6 +6,22 @@ const note1 = {
 };
 
 describe("NoteActions", () => {
+  it("should return the proper UPDATE_NOTE_SUCCESS action", () => {
+    const result = NoteActions.updateNoteSuccess(note1);
+    expect(result).toEqual({
+      type: "UPDATE_NOTE_SUCCESS",
+      note: note1
+    });
+  });
+
+  it("should return the proper UPDATE_NOTE_FAILURE action", () => {
+    const result = NoteActions.updateNoteFailure("something went wrong");
+    expect(result).toEqual({
+      type: "UPDATE_NOTE_FAILURE",
+      message: "something went wrong"
+    });
+  });
+
   it("should return the proper CREATE_NOTE_SUCCESS action", () => {
     const result = NoteActions.createNoteSuccess(note1);
     expect(result).toEqual({
