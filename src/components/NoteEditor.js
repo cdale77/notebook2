@@ -6,13 +6,14 @@ class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
     this.debouncedSave = Utils.debounce(() => {
-      const noteText = this.state.noteText;
-      console.log("savingNote: ", noteText);
+      const note = this.state.note;
+      console.log("savingNote: ", note);
+      props.updateNote(note);
       this.showSaveIcon();
     }, 3000);
 
     this.state = {
-      noteText: props.note.text,
+      note: props.note,
       displaySaveIcon: false
     };
   }
@@ -31,7 +32,14 @@ class NoteEditor extends React.Component {
 
   handleFormChange(e) {
     const newText = e.target.value;
-    this.setState({ noteText: newText });
+    const oldNote = this.state.note;
+    const newNote = {
+      noteId: oldNote.noteId,
+      bookId: oldNote.bookId,
+      name: oldNote.name,
+      text: newText
+    }
+    this.setState({ note: newNote });
     this.debouncedSave();
   }
 
@@ -49,7 +57,7 @@ class NoteEditor extends React.Component {
           <textarea
             name="note-text"
             id="note-text"
-            value={this.state.noteText}
+            value={this.state.note.text}
             onChange={this.handleFormChange.bind(this)}
           />
         </form>

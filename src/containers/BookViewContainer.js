@@ -21,6 +21,9 @@ const mapDispatchToProps = dispatch => {
     },
     setCurrentNote: noteId => {
       dispatch(NoteActions.setCurrentNote(noteId));
+    },
+    updateNote: note => {
+      dispatch(NoteThunks.updateNote(note));
     }
   };
 };
@@ -43,6 +46,7 @@ class BookViewContainer extends React.Component {
           noteList={noteList}
           currentNote={currentNote}
           setCurrentNote={this.props.setCurrentNote}
+          updateNote={this.props.updateNote}
           createNote={this.props.createNote.bind(this, currentBook["bookId"])}
         />
       </div>

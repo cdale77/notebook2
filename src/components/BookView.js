@@ -9,7 +9,8 @@ const BookView = ({
   noteList,
   currentNote,
   createNote,
-  setCurrentNote
+  setCurrentNote,
+  updateNote
 }) => {
   return (
     <div className="book-view">
@@ -18,7 +19,7 @@ const BookView = ({
         createNote={createNote}
         setCurrentNote={setCurrentNote}
       />
-      <NoteEditor note={currentNote} />
+      <NoteEditor note={currentNote} updateNote={updateNote} />
       <NoteView note={currentNote} />
     </div>
   );
@@ -29,7 +30,8 @@ BookView.propTypes = {
   currentNote: PropTypes.object,
   noteList: PropTypes.array,
   createNote: PropTypes.func.isRequired,
-  setCurrentNote: PropTypes.func.isRequired
+  setCurrentNote: PropTypes.func.isRequired,
+  updateNote: PropTypes.func.isRequired
 };
 
 BookView.defaultProps = {

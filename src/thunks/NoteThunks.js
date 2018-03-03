@@ -4,6 +4,24 @@ import FlashActions from "../actions/FlashActions";
 import Utils from "../Utils";
 
 const NoteThunks = {
+  updateNote: note => {
+    console.log("updateNote: ", note)
+    return dispatch => {
+      dispatch(RequestActions.requestStart("UPDATE_NOTE"));
+      const fireBaseRef = Utils.getFireBaseNoteRef(note.bookId, note.noteId);
+
+      fireBaseRef
+        .update(note)
+        .then(() => {
+          dispatch(NoteActions.updateNoteSuccess(note));
+        })
+        .catch(error => {
+          dispatch(FlashActions.flashError(error.message));
+          dispatch(NoteActions.updateNoteFailure(error.message));
+        });
+      dispatch(RequestActions.requestEnd("UPDATE_NOTE"));
+    };
+  },
   createNote: (bookId, name) => {
     return dispatch => {
       dispatch(RequestActions.requestStart("CREATE_NOTE"));

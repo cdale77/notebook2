@@ -16,6 +16,7 @@ describe("BookView", () => {
             noteList={[]}
             currentNote={{}}
             setCurrentNote={jest.fn()}
+            updateNote={jest.fn()}
             createNote={jest.fn()}
           />
         );
@@ -32,6 +33,7 @@ describe("BookView", () => {
             noteList={[]}
             currentNote={{}}
             setCurrentNote={jest.fn()}
+            updateNote={jest.fn()}
             createNote={jest.fn()}
           />
         );

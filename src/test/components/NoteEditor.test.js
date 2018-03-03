@@ -8,7 +8,9 @@ describe("NoteView", () => {
   describe("rendering", () => {
     describe("without a note", () => {
       it("should render without error", () => {
-        const component = Renderer.create(<NoteEditor note={{}} />);
+        const component = Renderer.create(
+          <NoteEditor note={{}} updateNote={jest.fn()} />
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
       });
@@ -16,7 +18,9 @@ describe("NoteView", () => {
 
     describe("with a note", () => {
       it("should render without error", () => {
-        const component = Renderer.create(<NoteEditor note={note1} />);
+        const component = Renderer.create(
+          <NoteEditor note={note1} updateNote={jest.fn()} />
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot;
       });
