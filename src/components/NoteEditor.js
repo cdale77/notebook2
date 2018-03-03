@@ -7,7 +7,6 @@ class NoteEditor extends React.Component {
     super(props);
     this.debouncedSave = Utils.debounce(() => {
       const note = this.state.note;
-      console.log("savingNote: ", note);
       props.updateNote(note);
       this.showSaveIcon();
     }, 3000);
@@ -38,7 +37,7 @@ class NoteEditor extends React.Component {
       bookId: oldNote.bookId,
       name: oldNote.name,
       text: newText
-    }
+    };
     this.setState({ note: newNote });
     this.debouncedSave();
   }

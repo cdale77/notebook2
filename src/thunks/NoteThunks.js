@@ -5,7 +5,6 @@ import Utils from "../Utils";
 
 const NoteThunks = {
   updateNote: note => {
-    console.log("updateNote: ", note)
     return dispatch => {
       dispatch(RequestActions.requestStart("UPDATE_NOTE"));
       const fireBaseRef = Utils.getFireBaseNoteRef(note.bookId, note.noteId);
