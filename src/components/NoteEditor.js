@@ -17,6 +17,10 @@ class NoteEditor extends React.Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({ note: newProps.note });
+  }
+
   showSaveIcon() {
     const iconTimer = window.setTimeout(() => {
       window.clearTimeout(this.state.iconTimer);
@@ -30,13 +34,12 @@ class NoteEditor extends React.Component {
   }
 
   handleFormChange(e) {
-    const newText = e.target.value;
     const oldNote = this.state.note;
     const newNote = {
       noteId: oldNote.noteId,
       bookId: oldNote.bookId,
       name: oldNote.name,
-      text: newText
+      text: e.target.value
     };
     this.setState({ note: newNote });
     this.debouncedSave();

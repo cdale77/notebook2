@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flash rendering should display when the message prop present 1`] = `
+<div
+  className="flash-undefined"
+  id="flash"
+>
+  <div
+    className="flash-message"
+  >
+    It worked!
+  </div>
+  <div
+    className="close-button"
+  >
+    <button
+      className="close-flash btn-small"
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Flash rendering should display when the message prop present 2`] = `
+<div
+  className="flash-undefined"
+  id="flash"
+>
+  <div
+    className="flash-message"
+  >
+    It worked!
+  </div>
+  <div
+    className="close-button"
+  >
+    <button
+      className="close-flash btn-small"
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Flash rendering should not display when the message is blank 1`] = `<div />`;
+
+exports[`Flash rendering should not display when the message is not provided 1`] = `<div />`;

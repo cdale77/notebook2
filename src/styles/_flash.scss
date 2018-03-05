@@ -1,0 +1,22 @@
+#flash {
+  padding: 1.5% 2.5%;
+  border-radius: 4px;
+  margin-bottom: 2%;
+  display: flex;
+  min-height: 1.5rem;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px 0 $shadow-color;
+}
+
+#flash .close-button {
+}
+
+#flash .flash-message {
+}
+
+.flash-success { background-color: $success-color; }
+.flash-alert { background-color: $alert-color; }
+.flash-error { background-color: $error-color; }
+.flash-notice { background-color: $notice-color; }
+
+.flash-undefined { display: none !important; }

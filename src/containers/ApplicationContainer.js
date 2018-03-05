@@ -4,9 +4,14 @@ import FlashActions from "./../actions/FlashActions";
 import SessionActions from "./../actions/SessionActions";
 import SignInContainer from "./SignInContainer";
 import AuthenticatedContainer from "./AuthenticatedContainer";
+import Flash from "../components/Flash";
 
 const mapStateToProps = state => {
-  return { session: state.session };
+  return {
+    session: state.session,
+    flashType: state.flash.flashType,
+    flashMsg: state.flash.message
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -30,7 +35,16 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    return <div id="app">{this.renderContainer()}</div>;
+    return (
+      <div id="app">
+        <Flash
+          closeFlash={this.props.closeFlash}
+          flashType={this.props.flashType}
+          message={this.props.flashMsg}
+        />
+        {this.renderContainer()}
+      </div>
+    );
   }
 }
 
