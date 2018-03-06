@@ -18,7 +18,13 @@ class NoteEditor extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ note: newProps.note });
+    const newNote = newProps.note;
+    // textarea seems to not update itself if provided null for the value
+    if (Object.keys(newNote).length === 0) {
+      this.setState({ note: { text: "" } });
+    } else {
+      this.setState({ note: newNote });
+    }
   }
 
   showSaveIcon() {
@@ -73,7 +79,7 @@ NoteEditor.propTypes = {
 };
 
 NoteEditor.defaultProps = {
-  note: {}
+  note: { text: "" }
 };
 
 export default NoteEditor;

@@ -50,12 +50,14 @@ const NoteThunks = {
     return dispatch => {
       dispatch(RequestActions.requestStart("GET_NOTES"));
       const fireBaseRef = Utils.getFireBaseNotesRef(bookId);
-
       fireBaseRef
         .once("value")
         .then(resp => {
           // Destructure the firebase data - make an array of note objects
           const fbData = resp.val();
+          if (fbData === null) {
+            throw new Error("No notes found.");
+          }
           const noteList = Object.entries(fbData).map(array => {
             // the first item in the array is the bookId/key, the
             // second is the actual book object

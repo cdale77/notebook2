@@ -88,7 +88,7 @@ describe("NoteReducer", () => {
 
     expect(returnedState).toEqual({
       currentNote: {},
-      noteList: noteList
+      noteList: []
     });
   });
 

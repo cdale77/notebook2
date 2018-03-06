@@ -20,6 +20,12 @@ function NoteReducer(state = {}, action) {
         noteList: action.noteList
       });
 
+    case Constants.ACTIONS.GET_NOTES_FAILURE:
+      return Object.assign({}, state, {
+        currentNote: {},
+        noteList: []
+      });
+
     case Constants.ACTIONS.SET_CURRENT_NOTE:
       return Object.assign({}, state, {
         currentNote: action.note
