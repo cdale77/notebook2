@@ -1,8 +1,18 @@
-.book-view-container h2 {
+.book-view-container .book-view-title {
   margin: 0;
-  padding: 0.75rem 1rem;
+  padding: 0 1rem;
   border-top: 1px solid $light-gray;
   border-bottom: 1px solid $medium-gray;
+  display: flex;
+  align-items: center;
+}
+
+.book-view-container .book-view-title span {
+  padding-left: 0.5rem;
+}
+
+.book-view-container .book-view-title h2 {
+  margin: 0.9rem 0;
 }
 
 .book-view {

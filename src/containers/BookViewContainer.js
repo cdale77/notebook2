@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import BookView from "../components/BookView";
+import BookViewTitle from "../components/BookViewTitle";
 import NoteThunks from "../thunks/NoteThunks";
 import NoteActions from "../actions/NoteActions";
 
@@ -40,7 +41,7 @@ class BookViewContainer extends React.Component {
     const currentNote = this.props.notes["currentNote"];
     return (
       <div className="book-view-container">
-        <h2>{currentBook["name"]}</h2>
+        <BookViewTitle title={currentBook["name"]} />
         <BookView
           book={currentBook}
           noteList={noteList}
