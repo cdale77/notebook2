@@ -74,10 +74,18 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
   <div
     className="book-view-container"
   >
-    <div>
+    <div
+      className="book-view-title"
+    >
       <h2>
         Foo
       </h2>
+      <span
+        aria-label="edit-icon"
+        role="img"
+      >
+        🖉
+      </span>
     </div>
     <div
       className="book-view"
