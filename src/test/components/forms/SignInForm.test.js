@@ -13,21 +13,17 @@ describe("SignInForm", () => {
     });
   });
 
-  describe("submitting the form", () => {
-    let callBack, spy, component;
-
-    beforeEach(() => {
-      callBack = {
-        onSubmit: () => {}
+  describe("form submission", () => {
+    it("should call the submit function", () => {
+      const callBack = {
+        onSubmit: jest.fn()
       };
 
-      spy = jest.spyOn(callBack, "onSubmit");
-      component = TestUtils.renderIntoDocument(
+      const spy = jest.spyOn(callBack, "onSubmit");
+      const component = TestUtils.renderIntoDocument(
         <SignInForm onSubmit={callBack.onSubmit} />
       );
-    });
 
-    it("should call the submit function", () => {
       const button = TestUtils.findRenderedDOMComponentWithClass(
         component,
         "button"
@@ -44,7 +40,7 @@ describe("SignInForm", () => {
       );
 
       // enter values in the fields to trigger the state change callbacks
-      emailField.value = "changed";
+      emailField.value = "newemail@example.org";
       pwField.value = "password";
       TestUtils.Simulate.change(emailField);
       TestUtils.Simulate.change(pwField);
@@ -54,8 +50,8 @@ describe("SignInForm", () => {
       expect(spy).toHaveBeenCalled();
       expect(callBack.onSubmit.mock.calls.length).toEqual(1);
 
-      // In the test env the password is coming as ""
-      const form = { email: "changed", password: "" };
+      // In the test env the password is ""
+      const form = { email: "newemail@example.org", password: "" };
       expect(callBack.onSubmit.mock.calls).toEqual([[form]]);
     });
   });
