@@ -16,7 +16,7 @@ describe("NewBookForm", () => {
   describe("submitting the form", () => {
     it("should call the submit function", () => {
       const callBack = {
-        onSubmit: () => {}
+        onSubmit: jest.fn()
       };
 
       const spy = jest.spyOn(callBack, "onSubmit");
