@@ -11,7 +11,7 @@ exports[`SignInContainer rendering should render without error 1`] = `
       Sign In
     </h2>
     <div
-      className="form fieldset sign-in-form"
+      className="sign-in-form"
     >
       <form>
         <div

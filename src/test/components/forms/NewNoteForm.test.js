@@ -13,21 +13,38 @@ describe("NewNoteForm", () => {
     });
   });
 
-  describe("submitting the form", () => {
-    let callBack, spy, component;
+  describe("form expander", () => {
+    it("should change the state when the trigger is clicked", () => {
+      const component = TestUtils.renderIntoDocument(
+        <NewNoteForm onSubmit={jest.fn()} />
+      );
 
-    beforeEach(() => {
-      callBack = {
+      // it should not be expanded by default
+      expect(component.state.expanded).toEqual(false);
+
+      const trigger = TestUtils.findRenderedDOMComponentWithClass(
+        component,
+        "new-note-expander"
+      );
+
+      TestUtils.Simulate.click(trigger);
+
+      // now it should be expanded
+      expect(component.state.expanded).toEqual(true);
+    });
+  });
+
+  describe("submitting the form", () => {
+    it("should call the submit function", () => {
+      const callBack = {
         onSubmit: () => {}
       };
 
-      spy = jest.spyOn(callBack, "onSubmit");
-      component = TestUtils.renderIntoDocument(
+      const spy = jest.spyOn(callBack, "onSubmit");
+      const component = TestUtils.renderIntoDocument(
         <NewNoteForm onSubmit={callBack.onSubmit} />
       );
-    });
 
-    it("should call the submit function", () => {
       const button = TestUtils.findRenderedDOMComponentWithClass(
         component,
         "button"
@@ -39,7 +56,7 @@ describe("NewNoteForm", () => {
       );
 
       // enter values in the fields to trigger the state change callbacks
-      nameField.value = "changed";
+      nameField.value = "New note";
       TestUtils.Simulate.change(nameField);
 
       TestUtils.Simulate.click(button);
@@ -47,7 +64,7 @@ describe("NewNoteForm", () => {
       expect(spy).toHaveBeenCalled();
       expect(callBack.onSubmit.mock.calls.length).toEqual(1);
 
-      const form = { name: "changed", expanded: false };
+      const form = { name: "New note" };
       expect(callBack.onSubmit.mock.calls).toEqual([[form]]);
     });
   });

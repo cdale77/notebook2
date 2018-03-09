@@ -8,7 +8,7 @@ describe("TextInput", () => {
   describe("rendering", () => {
     it("should render an input", () => {
       const component = Renderer.create(
-        <TextInput title="title" name="name" value="foo" onChange={jest.fn()} />
+        <TextInput title="city" name="city" value="SF" onChange={jest.fn()} />
       );
 
       const tree = component.toJSON();
@@ -17,7 +17,7 @@ describe("TextInput", () => {
 
     it("should render an input with a default value", () => {
       const component = Renderer.create(
-        <TextInput title="title" name="name" onChange={jest.fn()} />
+        <TextInput title="city" name="city" onChange={jest.fn()} />
       );
 
       const tree = component.toJSON();
@@ -27,10 +27,10 @@ describe("TextInput", () => {
     it("should render an password input", () => {
       const component = Renderer.create(
         <TextInput
-          title="title"
-          name="name"
+          title="password"
+          name="password"
           fieldType="password"
-          value="foo"
+          value=""
           onChange={jest.fn()}
         />
       );
@@ -52,22 +52,22 @@ describe("TextInput", () => {
       component = TestUtils.renderIntoDocument(
         <TestWrapper>
           <TextInput
-            title="title"
-            name="name"
-            value="foo"
+            title="city"
+            name="city"
+            value="SF"
             onChange={callBack.onChange}
           />
         </TestWrapper>
       );
     });
 
-    it("should fire the change function when the user types", () => {
+    it("should fire the change function when the user adds input", () => {
       const field = TestUtils.findRenderedDOMComponentWithClass(
         component,
-        "input-name"
+        "input-city"
       );
 
-      field.value = "new value here";
+      field.value = "Berkeley";
       TestUtils.Simulate.change(field);
 
       expect(spy).toHaveBeenCalled();

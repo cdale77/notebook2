@@ -14,20 +14,16 @@ describe("NewBookForm", () => {
   });
 
   describe("submitting the form", () => {
-    let callBack, spy, component;
-
-    beforeEach(() => {
-      callBack = {
+    it("should call the submit function", () => {
+      const callBack = {
         onSubmit: () => {}
       };
 
-      spy = jest.spyOn(callBack, "onSubmit");
-      component = TestUtils.renderIntoDocument(
+      const spy = jest.spyOn(callBack, "onSubmit");
+      const component = TestUtils.renderIntoDocument(
         <NewBookForm onSubmit={callBack.onSubmit} />
       );
-    });
 
-    it("should call the submit function", () => {
       const button = TestUtils.findRenderedDOMComponentWithClass(
         component,
         "button"
@@ -39,7 +35,7 @@ describe("NewBookForm", () => {
       );
 
       // enter values in the fields to trigger the state change callbacks
-      nameField.value = "changed";
+      nameField.value = "New book";
       TestUtils.Simulate.change(nameField);
 
       TestUtils.Simulate.click(button);
@@ -47,7 +43,7 @@ describe("NewBookForm", () => {
       expect(spy).toHaveBeenCalled();
       expect(callBack.onSubmit.mock.calls.length).toEqual(1);
 
-      const form = { name: "changed" };
+      const form = { name: "New book" };
       expect(callBack.onSubmit.mock.calls).toEqual([[form]]);
     });
   });

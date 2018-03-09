@@ -59,7 +59,7 @@ exports[`SubmitButton rendering should render a button 1`] = `
     name="submit"
     onClick={[Function]}
     type="submit"
-    value="Login"
+    value="Submit"
   />
 </div>
 `;

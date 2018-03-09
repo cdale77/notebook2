@@ -8,7 +8,7 @@ describe("SubmitButton", () => {
   describe("rendering", () => {
     it("should render a button", () => {
       const component = Renderer.create(
-        <SubmitButton value="Login" onSubmit={jest.fn()} />
+        <SubmitButton value="Submit" onSubmit={jest.fn()} />
       );
 
       const tree = component.toJSON();
@@ -46,7 +46,7 @@ describe("SubmitButton", () => {
   });
 
   describe("submitting", () => {
-    it("should fire the submit callback when clicked", () => {
+    it("should fire the provided callback when clicked", () => {
       const callBack = {
         onSubmit: () => {}
       };

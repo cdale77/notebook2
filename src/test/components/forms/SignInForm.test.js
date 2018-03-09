@@ -40,7 +40,7 @@ describe("SignInForm", () => {
       );
 
       // enter values in the fields to trigger the state change callbacks
-      emailField.value = "newemail@example.org";
+      emailField.value = "email@example.org";
       pwField.value = "password";
       TestUtils.Simulate.change(emailField);
       TestUtils.Simulate.change(pwField);
@@ -51,7 +51,7 @@ describe("SignInForm", () => {
       expect(callBack.onSubmit.mock.calls.length).toEqual(1);
 
       // In the test env the password is ""
-      const form = { email: "newemail@example.org", password: "" };
+      const form = { email: "email@example.org", password: "" };
       expect(callBack.onSubmit.mock.calls).toEqual([[form]]);
     });
   });

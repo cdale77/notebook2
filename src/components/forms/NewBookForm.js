@@ -20,7 +20,7 @@ class NewBookForm extends React.Component {
 
   render() {
     return (
-      <div className="form fieldset new-book-form">
+      <div className="new-book-form">
         <form>
           <TextInput
             name="name"

@@ -11,7 +11,7 @@ exports[`NewNoteForm rendering should render the form 1`] = `
     + Add Note
   </button>
   <div
-    className="form fieldset new-note-form expander-content"
+    className="new-note-form expander-content"
   >
     <form>
       <div

@@ -24,7 +24,7 @@ class SignInForm extends React.Component {
 
   render() {
     return (
-      <div className="form fieldset sign-in-form">
+      <div className="sign-in-form">
         <form>
           <TextInput
             title="email"

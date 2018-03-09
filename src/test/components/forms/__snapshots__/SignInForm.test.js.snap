@@ -2,7 +2,7 @@
 
 exports[`SignInForm rendering should render the form 1`] = `
 <div
-  className="form fieldset sign-in-form"
+  className="sign-in-form"
 >
   <form>
     <div

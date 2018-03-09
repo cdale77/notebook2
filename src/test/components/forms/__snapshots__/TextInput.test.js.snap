@@ -5,13 +5,13 @@ exports[`TextInput rendering should render an input 1`] = `
   className="form-group"
 >
   <input
-    className="input-name"
-    id="name"
-    name="name"
+    className="input-city"
+    id="city"
+    name="city"
     onChange={[Function]}
-    placeholder="title"
+    placeholder="city"
     type="text"
-    value="foo"
+    value="SF"
   />
 </div>
 `;
@@ -21,11 +21,11 @@ exports[`TextInput rendering should render an input with a default value 1`] = `
   className="form-group"
 >
   <input
-    className="input-name"
-    id="name"
-    name="name"
+    className="input-city"
+    id="city"
+    name="city"
     onChange={[Function]}
-    placeholder="title"
+    placeholder="city"
     type="text"
     value={undefined}
   />
@@ -37,13 +37,13 @@ exports[`TextInput rendering should render an password input 1`] = `
   className="form-group"
 >
   <input
-    className="input-name"
-    id="name"
-    name="name"
+    className="input-password"
+    id="password"
+    name="password"
     onChange={[Function]}
-    placeholder="title"
+    placeholder="password"
     type="password"
-    value="foo"
+    value=""
   />
 </div>
 `;

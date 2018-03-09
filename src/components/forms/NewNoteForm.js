@@ -25,7 +25,8 @@ class NewNoteForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit(this.state);
+    const form = { name: this.state.name };
+    this.props.onSubmit(form);
     this.setState({ expanded: false });
   }
 
@@ -38,7 +39,7 @@ class NewNoteForm extends React.Component {
         >
           + Add Note
         </button>
-        <div className="form fieldset new-note-form expander-content">
+        <div className="new-note-form expander-content">
           <form>
             <div className="fieldset-wrapper">
               <TextInput

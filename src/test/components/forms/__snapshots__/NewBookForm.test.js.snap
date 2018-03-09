@@ -2,7 +2,7 @@
 
 exports[`NewBookForm rendering should render the form 1`] = `
 <div
-  className="form fieldset new-book-form"
+  className="new-book-form"
 >
   <form>
     <div

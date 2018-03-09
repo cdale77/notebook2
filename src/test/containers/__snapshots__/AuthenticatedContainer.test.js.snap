@@ -20,7 +20,7 @@ exports[`AuthenticatedContainer rendering should render without error 1`] = `
       NoteBooks
     </h2>
     <div
-      className="form fieldset new-book-form"
+      className="new-book-form"
     >
       <form>
         <div
@@ -103,7 +103,7 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
             + Add Note
           </button>
           <div
-            className="form fieldset new-note-form expander-content"
+            className="new-note-form expander-content"
           >
             <form>
               <div
@@ -199,7 +199,7 @@ exports[`AuthenticatedContainer without a currrentBook set should render the Boo
       NoteBooks
     </h2>
     <div
-      className="form fieldset new-book-form"
+      className="new-book-form"
     >
       <form>
         <div
