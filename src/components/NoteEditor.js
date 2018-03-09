@@ -63,6 +63,7 @@ class NoteEditor extends React.Component {
         </div>
         <form>
           <textarea
+            className="note-text"
             name="note-text"
             id="note-text"
             value={this.state.note.text}
@@ -75,7 +76,8 @@ class NoteEditor extends React.Component {
 }
 
 NoteEditor.propTypes = {
-  note: PropTypes.object
+  note: PropTypes.object,
+  updateNote: PropTypes.func
 };
 
 NoteEditor.defaultProps = {

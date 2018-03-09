@@ -159,6 +159,7 @@ exports[`AuthenticatedContainer with a currrentBook set should render the BookVi
         </div>
         <form>
           <textarea
+            className="note-text"
             id="note-text"
             name="note-text"
             onChange={[Function]}
