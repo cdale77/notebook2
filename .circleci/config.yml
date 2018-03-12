@@ -8,7 +8,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: cdale77/docker-js-base
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -37,3 +37,22 @@ jobs:
       # run tests!
       - run: npm test
 
+  deploy:
+    docker:
+      - image: cdale77/docker-js-base
+    steps:
+      - checkout
+      - run: npm install
+      - run: ./deploy.sh
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
